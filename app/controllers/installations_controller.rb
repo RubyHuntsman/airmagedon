@@ -1,6 +1,7 @@
 class InstallationsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin
   before_action :set_installation, only: [:show, :edit, :update, :destroy]
-
   # GET /installations
   # GET /installations.json
   def index
@@ -70,5 +71,12 @@ class InstallationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def installation_params
       params.require(:installation).permit(:name, :sensor_id)
+    end
+
+    def check_if_admin
+      unless current_user.is_admin 
+        redirect_to "/"
+        flash[:alert] = "Dostęp tylko dla administracji"
+      end
     end
 end
