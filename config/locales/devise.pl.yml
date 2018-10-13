@@ -1,0 +1,64 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+pl:
+  devise:
+    confirmations:
+      confirmed: "Twoj adres e-mail zostal pomyslnie zatwierdzony."
+      send_instructions: "Za chwilę otrzymasz email z instrukcją jak aktywować konto."
+      send_paranoid_instructions: "Jeśli Twój adres email istnieje w naszej bazie, za chwilę powinieneś otrzymać instrukcję jak aktywować konto."
+    failure:
+      already_authenticated: "Jestes aktualnie zalogowany."
+      inactive: "Twoje konto nie zostalo jeszcze aktywowane."
+      invalid: "Zly %{authentication_keys} lub haslo."
+      locked: "Twoje konto jest zablokowane."
+      last_attempt: "Masz jeszcze jedną probe, zanim Twoje konto zostanie zablokowane."
+      not_found_in_database: "Zly %{authentication_keys} lub haslo."
+      timeout: "Sesja wygasla, zaloguj się ponownie by kontynuowac."
+      unauthenticated: "Aby kontynuowac musisz sie zalogowac."
+      unconfirmed: "Aby kontynuowac musisz aktywowac swoje konto."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrukcja aktywacji konta"
+      reset_password_instructions:
+        subject: "Instrukcja zresetowania hasła."
+      unlock_instructions:
+        subject: "Instrukcja odblokowania konta"
+      email_changed:
+        subject: "Email zostal zmieniony"
+      password_change:
+        subject: "Haslo zostalo zmienione"
+    omniauth_callbacks:
+      failure: "Logowanie przez konto %{kind} zakonczylo się bledem: \"%{reason}\"."
+      success: "Zalogowales sie pomyslnie przez konto %{kind}."
+    passwords:
+      no_token: "Dostep do tej strony jest mozliwy jedynie poprzez uzycie prawidlowego adresu z emaila z instrukcjami o resecie hasla. Jezeli wlasnie skorzystales z tego adresu, sprawdz czy uzyty adres jest zgodny z tym w emailu."
+      send_instructions: "Za chwile otrzymasz emaila z instrukcja jak zresetowac haslo."
+      send_paranoid_instructions: "Jezeli Twoj adres istnieje w naszej bazie, otrzymasz za chwilę emaila z instrukcją zmiany hasla."
+      updated: "Twoje haslo zostalo zmienione. Zostales pomyslnie zalogowany."
+      updated_not_active: "Twoje haslo zostalo zmienione."
+    registrations:
+      destroyed: "Twoje konto zostalo usuniete!"
+      signed_up: "Zarejestrowales sie pomyslnie!"
+      signed_up_but_inactive: "Zarejestrowales sie pomyslnie. Niemniej jednak nie zostales zalogowany, poniewaz Twoje konto nie zostalo jeszcze aktywowane."
+      signed_up_but_locked: "Zarejestrowales sie pomyslnie. Niemniej jednak nie zostales zalogowany, poniewaz Twoje konto zostało zablokowane."
+      signed_up_but_unconfirmed: "Wiadomosc email z instrukcja aktywacji konta zostala przeslana na Twoj adres email. Uzyj linku z emaila aby aktywowac konto."
+      update_needs_confirmation: "Konto zostalo zaktualizowane. Niemniej jednak przed wprowadzeniem zmian musimy potwierdzic Twoj nowy adres email. Za chwilę wyslemy instrukcję na nowy adres."
+      updated: "Konto zostalo pomyslnie zaktualizowane."
+    sessions:
+      signed_in: "Zostales zalogowany!"
+      signed_out: "Zostales wylogowany!"
+      already_signed_out: "Zostales wylogowany!"
+    unlocks:
+      send_instructions: "Za chwile otrzymasz wiadomosc email z instrukcja jak odblokowac konto."
+      send_paranoid_instructions: "Jezeli Twoje konto istnieje, otrzymasz wiadomosc email z instrukcja jak odblokowac konto."
+      unlocked: "Twoje konto zostala pomyslnie odblokowane. Zaloguj sie by kontynuowac."
+  errors:
+    messages:
+      already_confirmed: "Już zostal aktywowany, prosze sprobowac sie zalogowac."
+      confirmation_period_expired: "Musi zostac potwierdzony w czasie %{period}, wyslij zapytanie o nowy."
+      expired: "Stracil waznosc, wyslij zapytanie o nowy."
+      not_found: "Nie znaleziono!"
+      not_locked: "Nie zostal zablokowany!"
+      not_saved:
+        one: "%{resource} Nie zostal zapisany z powodu bledu:"
+        other: "%{resource} Nie zostal zapisany przez %{count} bledow:"
