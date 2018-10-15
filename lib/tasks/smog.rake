@@ -11,7 +11,7 @@ namespace :smog do
 	    responce = RestClient::Request.execute(
 	      :method => :get,
 	      :url => "https://airapi.airly.eu/v2/measurements/installation?installationId=#{id}",
-	      :headers => {'apikey' => 'API_KEY'}
+	      :headers => {'apikey' => ENV['API_KEY']}
 	    )
 	    data = JSON.parse(responce)
 		
