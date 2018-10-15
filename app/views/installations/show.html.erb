@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @installation.name %>
 </p>
 
 <p>
-  <strong>Sensor:</strong>
+  <strong>Czujnik:</strong>
   <%= @installation.sensor_id %>
 </p>
 
-<%= link_to 'Edit', edit_installation_path(@installation) %> |
-<%= link_to 'Back', installations_path %>
+<%= link_to 'Edytuj', edit_installation_path(@installation) %> |
+<%= link_to 'Cofnij', installations_path %>
