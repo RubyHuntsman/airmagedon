@@ -11,7 +11,10 @@ namespace :smog do
 	    responce = RestClient::Request.execute(
 	      :method => :get,
 	      :url => "https://airapi.airly.eu/v2/measurements/installation?installationId=#{id}",
-	      :headers => {'apikey' => ENV['API_KEY']}
+	      # :headers => {'apikey' => ENV['API_KEY']}
+	      # :headers => {'apikey' => Setting.api_key}
+	      :headers => {'apikey' => 'HUboI99zPaFa03U2knw3NJi6CP6e0S8I'}
+
 	    )
 	    data = JSON.parse(responce)
 		
@@ -23,5 +26,7 @@ namespace :smog do
 	    				  				 ) unless data["current"].blank?
 
 		end
+  
+		UserMailer.notif("wlodku@gmail.com").deliver
   end
 end

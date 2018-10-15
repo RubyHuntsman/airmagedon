@@ -6,6 +6,10 @@ class InstallationsController < ApplicationController
   # GET /installations.json
   def index
     @installations = Installation.all
+
+    @apikey = Setting.api_key
+    @email = Setting.email
+    @password = Setting.password
   end
 
   # GET /installations/1

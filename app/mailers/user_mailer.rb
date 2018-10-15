@@ -1,5 +1,5 @@
-class ApplicationMailer < ActionMailer::Base
-  default from: 'maciej.lokio@interia.pl'
+class UserMailer < ApplicationMailer
+	default from: 'maciej.lokio@interia.pl'
   layout 'mailer'
 
   def notif(address)
@@ -7,4 +7,6 @@ class ApplicationMailer < ActionMailer::Base
   	mail(headers = {to: address, reply_to: 'noreply@airmagedon.pl', subject: 'Uwaga!'})
 
   end
+
+  
 end
