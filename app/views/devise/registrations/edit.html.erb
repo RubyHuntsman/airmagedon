@@ -1,4 +1,4 @@
-<h2>Edytuj <%= resource_name.to_s.humanize %></h2>
+<h2>Edytuj Konto</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -42,8 +42,8 @@
   </div>
 <% end %>
 
-<h3>Anuluj moje konto</h3>
+<h3>Usuń moje konto!</h3>
 
-<p>Nieszczęsliwy? <%= button_to "Anuluj moje konto", registration_path(resource_name), data: { confirm: "Jesteś pewny?" }, method: :delete %></p>
+<p>USUŃ: <%= button_to "Usuń konto!", registration_path(resource_name), data: { confirm: "Czy jesteś pewny że chcesz to zrobić?" }, method: :delete %></p>
 
 <%= link_to "Wróć", :back %>
