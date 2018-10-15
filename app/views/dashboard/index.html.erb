@@ -1,2 +1,31 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Pomiary na żywo</h1>
+
+  <table>
+    <tr>
+      <th>Lokalizacja</th>
+      <th>PM10</th>
+      <th>PM2.5</th>
+      <th>Godzina pomiaru</th>
+      <th>Interpretacja*</th>
+    </tr>
+  <% @live.each do |m| %>
+      <tr>
+        <td><%= m.installation.name %></td>
+        <td><%= (m.pm10*100)/50 %>%</td>
+        <td><%= (m.pm25*100)/25 %>%</td>
+        <td><%= m.measured_at.in_time_zone("Warsaw").strftime("%H:%M") %></td>
+        <td></td>
+      </tr>
+
+  <% end %>
+
+<div style="width: 800px;">
+<canvas id="area" width="400" height="200"></canvas>
+</div>
+<script>
+	area('area', 
+		<%= @area10.keys.map{ |v| v } %>,
+		<%= @area10.values.map { |v| v.round } %>,
+		<%= @area25.values.map { |v| v.round } %>
+		);
+</script>
