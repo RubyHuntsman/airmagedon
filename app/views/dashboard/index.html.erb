@@ -14,7 +14,7 @@
         <td><%= (m.pm10*100)/50 %>%</td>
         <td><%= (m.pm25*100)/25 %>%</td>
         <td><%= m.measured_at.in_time_zone("Warsaw").strftime("%H:%M") %></td>
-        <td></td>
+        <%= getColor(m.pm10, m.pm25) %>
       </tr>
 
   <% end %>

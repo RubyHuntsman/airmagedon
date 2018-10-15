@@ -3,6 +3,20 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+      :openssl_verify_mode => 'none',
+      :address        => 'interia.pl',
+      :domain         => 'interia.pl',
+      :port           => 587,
+      :user_name      => 'maciej.lokio@interia.pl',
+      :password       => 'zaq1@WSX',
+      :authentication => :plain,
+      :enable_starttls_auto => true,
+  }
+
+
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
