@@ -29,4 +29,10 @@ namespace :smog do
   
 		UserMailer.notif("wlodku@gmail.com").deliver
   end
+
+  desc "Send alert via email"
+  task send_mail: :environment do
+    UserMailer.notif('wlodku@gmail.com').deliver
+  end
+
 end

@@ -91,4 +91,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+      :openssl_verify_mode => 'none',
+      :port           => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true,
+  }
+  
 end

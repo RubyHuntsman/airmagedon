@@ -4,7 +4,18 @@ class UserMailer < ApplicationMailer
 
   def notif(address)
   	@last_measurement = Measurement.last
-  	mail(headers = {to: address, reply_to: 'noreply@airmagedon.pl', subject: 'Uwaga!'})
+
+		delivery_options = {
+                         user_name: Setting.smtp_login,
+                         password: Setting.smtp_password,
+                         address: Setting.smtp_host
+                       }
+
+		mail(to: address,
+         subject: "Uwaga na smog",
+         delivery_method_options: delivery_options)
+
+
 
   end
 
