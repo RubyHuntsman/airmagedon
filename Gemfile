@@ -20,7 +20,6 @@ gem 'devise', '~> 4.2'
 gem 'rest-client', '~> 2.0'
 gem 'chart-js-rails'
 gem 'rails-settings-cached', '~> 0.6.3'
-gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
