@@ -27,7 +27,7 @@ namespace :smog do
 
 		end
   
-		UserMailer.notif("wlodku@gmail.com").deliver
   end
+		# UserMailer.notif("wlodku@gmail.com").deliver
 
 end
