@@ -1,3 +1,6 @@
+<%= link_to "O nas", about_path %>
+<%= link_to "System ostrzegania", subscriptions_path %>
+
 <h1>Pomiary na żywo</h1>
 
   <table>
@@ -22,6 +25,8 @@
 <div style="width: 800px;">
 <canvas id="area" width="400" height="200"></canvas>
 </div>
+
+
 <script>
 	area('area', 
 		<%= @area10.keys.map{ |v| v } %>,

@@ -9,4 +9,8 @@ class DashboardController < ApplicationController
 
     @area10, @area25 = get24AverageByHoursForArea
   end
+
+  def about
+  	
+  end
 end
