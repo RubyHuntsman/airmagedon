@@ -14,10 +14,6 @@ class UserMailer < ApplicationMailer
 		mail(to: address,
          subject: "Uwaga na smog",
          delivery_method_options: delivery_options)
-
-
-
   end
 
-  
 end
