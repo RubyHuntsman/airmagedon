@@ -15,22 +15,6 @@ ActiveRecord::Schema.define(version: 2018_10_17_083159) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "apples", force: :cascade do |t|
-    t.string "name"
-    t.integer "count"
-    t.text "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "fruits", force: :cascade do |t|
-    t.string "name"
-    t.integer "count"
-    t.text "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "installations", force: :cascade do |t|
     t.string "name"
     t.integer "sensor_id"
@@ -82,14 +66,6 @@ ActiveRecord::Schema.define(version: 2018_10_17_083159) do
     t.boolean "isactive"
     t.integer "critical"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "vegetables", force: :cascade do |t|
-    t.string "name"
-    t.integer "count"
-    t.text "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
