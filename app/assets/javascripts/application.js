@@ -15,7 +15,13 @@
 //= require turbolinks
 //= require Chart.min
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 
+$(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+});
 
 function area(canvasId, labels, pm10, pm25) {
   var ctx = document.getElementById(canvasId).getContext('2d');
@@ -111,5 +117,5 @@ function area(canvasId, labels, pm10, pm25) {
 }
 
 function dx() {
-	console.log("xd2")
+    console.log("xd2")
 }
