@@ -1,35 +1,37 @@
-<h2>Zarejestruj się!</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login, autofocus: true %>
+<section class="container-fluid about">
+  <div class="row justify-content-center">
+    <div class="col-6 text-center">
+      <h2>Zarejestruj się!</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :login %><br />
+          <%= f.text_field :login, autofocus: true %>
+        </div>
+         <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :password, "Hasło" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "Nowe hasło" %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "Potwierdz hasło" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Zarejestruj się!" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
+</section>
+<script>
+  document.querySelector("nav").setAttribute("style","background-color: #212529;");
+</script>
 
-   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password, "Hasło" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "Nowe hasło" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Potwierdz hasło" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Zarejestruj się!" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
