@@ -4,7 +4,6 @@ class SubscriptionsController < ApplicationController
   def index
   	@user = current_user
   	@installations =Installation.all
-
   end
 
 

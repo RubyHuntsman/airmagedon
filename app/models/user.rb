@@ -8,4 +8,6 @@ class User < ApplicationRecord
 	has_many :installations, through: :subscriptions
 
 	scope :actived, -> { where (isactive == true) }
+	# scope :not_spammed, -> { where (email_sent_at, Time.now-6.hours..Time.now) }
+
 end
