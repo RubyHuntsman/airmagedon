@@ -12,17 +12,19 @@
   <body>
     <% if user_signed_in? %>
       Zalogowany jako <strong><%= current_user.login %></strong>.
-     <%= link_to "Edycja profile", edit_user_registration_path, class: 'navbar-link' %>
-     <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
-     <%= link_to "Powiadomienia", '#', class: 'navbar-link'  %>
-     <% if current_user.is_admin %>
-      <%= link_to "Ustawienia", installations_path, class: 'navbar-link' %>
-     <% end %>
+      <%= link_to "Edycja profile", edit_user_registration_path, class: 'navbar-link' %>
+      <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+      <%= link_to "Strona główna", index_path %>
+      <%= link_to "O nas", about_path %>
+      <%= link_to "System ostrzegania", subscriptions_path %>
+      <% if current_user.is_admin %>
+        <%= link_to "Ustawienia", installations_path, class: 'navbar-link' %>
+      <% end %>
     <% else %>
       <%= link_to "Zarejestruj się", new_user_registration_path, class: 'navbar-link'  %>
-     <%= link_to "Zaloguj", new_user_session_path, class: 'navbar-link'  %>
+      <%= link_to "Zaloguj", new_user_session_path, class: 'navbar-link'  %>
     <% end %>
-
+    
     <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
     <% end %>

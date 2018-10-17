@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :subscriptions
 	has_many :installations, through: :subscriptions
 
+	scope :actived, -> { where (isactive == true) }
 end
