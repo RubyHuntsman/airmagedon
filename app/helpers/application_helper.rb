@@ -25,7 +25,7 @@ module ApplicationHelper
       result = "<td>Dobrze</td>"
     end
     if (pm10 > 50 && pm10 <= 100) || (pm25 > 36 && pm25 <= 60)
-      result = "<td'>Umiarkowanie</td>"
+      result = "<td>Umiarkowanie</td>"
     end
     if (pm10 > 100 && pm10 <= 140) || (pm25 > 60 && pm25 <= 84)
       result = "<td>Dostatecznie</td>"
