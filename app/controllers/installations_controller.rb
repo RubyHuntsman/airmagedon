@@ -7,9 +7,9 @@ class InstallationsController < ApplicationController
   def index
     @installations = Installation.all
 
-    @apikey = Setting.api_key
-    @email = Setting.email
-    @password = Setting.password
+    # @email = Setting.email
+    # @password = Setting.password
+
   end
 
   # GET /installations/1
@@ -66,6 +66,18 @@ class InstallationsController < ApplicationController
     end
   end
 
+  def smtp_options
+    Setting.smtp_login = params[:smtp_login]
+    Setting.smtp_password = params[:smtp_password]
+    Setting.smtp_host = params[:smtp_host]
+    redirect_to action: "index"
+  end
+
+  def api_key
+    Setting.api_key = params[:api_key]
+    redirect_to action: "index"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_installation
@@ -75,6 +87,10 @@ class InstallationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def installation_params
       params.require(:installation).permit(:name, :sensor_id)
+    end
+
+    def settings_params
+      params.require(:settting).permit(:api_key, :sensor_id)
     end
 
     def check_if_admin

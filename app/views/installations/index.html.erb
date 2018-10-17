@@ -31,14 +31,18 @@
 <h1>E-mail</h1>
 <p>Podaj dane adresu email z którego będą wysyłane powiadomienia</p>
 
-form1
-button go
 
-<%= form_with %>
-
+<%= form_tag action: 'smtp_options' do |form| %>
+  <%= text_field_tag :smtp_login, Setting.smtp_login %><br>
+  <%= text_field_tag :smtp_password, Setting.smtp_password %><br>
+  <%= text_field_tag :smtp_host, Setting.smtp_host %><br>
+  <%= submit_tag "Zatwierdź" %>
+<% end %>
 
 <h1>Apikey</h1>
 <p>Podaj klucz Airly</p>
 
-form2
-button go
+<%= form_tag action: 'api_key' do |form| %>
+  <%= text_field_tag :api_key, Setting.api_key %>
+  <%= submit_tag "Zatwierdź" %>
+<% end %>
