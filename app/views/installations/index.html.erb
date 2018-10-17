@@ -34,7 +34,7 @@
 
 <%= form_tag action: 'smtp_options' do |form| %>
   <%= text_field_tag :smtp_login, Setting.smtp_login %><br>
-  <%= text_field_tag :smtp_password, Setting.smtp_password %><br>
+  <%= password_field_tag :smtp_password, Setting.smtp_password %><br>
   <%= text_field_tag :smtp_host, Setting.smtp_host %><br>
   <%= submit_tag "Zatwierdź" %>
 <% end %>
