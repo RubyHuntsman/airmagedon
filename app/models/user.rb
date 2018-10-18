@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :subscriptions
 	has_many :installations, through: :subscriptions
 
-	scope :actived, -> { where (isactive == true) }
-	# scope :not_spammed, -> { where('email_sent_at > :last_hours', 
-	# 											 	 :last_hours => Time.now - 12.hours) }
+	scope :activated, -> { where(isactive: true) }
+	scope :not_spammed, -> { where('email_sent_at < :last_hours OR email_sent_at is NULL', 
+												 	 last_hours: Time.now - 12.hours) }
 end

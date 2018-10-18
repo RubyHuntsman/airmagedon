@@ -6,6 +6,13 @@
   </head>
   <body>
     <h1>Uwaga na jakość powierza!</h1>
-    <p><%= @last_measurement %></p>
+    <p>Jakość powietrza w wybranych przez Ciebie stacjach jest następująca:</p>
+    <ul>
+    	<% @om.each do |m| %>
+    		<li><%= m.installation.name %> - PM10: <%= (m.pm10*100)/50 %>%, PM2.5: <%= (m.pm10*100)/25 %>% 
+    	<% end %>
+    </ul>
+
+    <p>Nie otrzymasz podobnej wiadomości przez kolejne 8h - monitoruj jakość powietrza na stronie <a href="airmagedon.herokuapp.com">airmagedon.herokuapp.com</a></p>
   </body>
 </html>

@@ -25,6 +25,53 @@ namespace :smog do
 		end
   
   end
-		# UserMailer.notif("wlodku@gmail.com").deliver
 
+  desc "Send mails"
+  task send_mails: :environment do
+  	users_to_check = User.activated.not_spammed
+
+
+	# users_to_check = User.where(["isactive = :isactive and email_sent_at < email_sent_at:", { isactive: true, email_sent_at: Time.now - 12.hours})
+	
+	#  # User.where(["isactive = ? and email_sent_at = ?", true, Time.now - 8.hours])
+
+	# users_to_check.each do |u|
+	# 	user_installations_ids = Subscription.where(user_id == u.id)
+	# 	# get all measurements last where id = installation_id
+	# 	overhight_measurements = user_installations_ids.map { |i| Measurement.where(installation_id = i).last }  #chyba nie where bo znajdzie wszystkie  tylko find bo znajdzie ostatni, ajeżeni nie to można dać ".last"
+	# 	# user_installations_ids = Subscription.all.map { |s| s.} // nie jest dobre # wydajnosc
+	
+	# 	if overhight_measurements 
+	# 		UserMailer.notif("wlodku@gmail.com", overhight_measurements).deliver
+	# 	end
+	end
+
+	desc "spam machine"
+  task qwe: :environment do
+  	users_to_warn = User.activated.not_spammed
+
+  	users_to_warn.each	do |u|
+			if UserMailer.notif(u).deliver
+				u.email_sent_at = Time.now
+				u.save
+			end
+  	end
+		# puts "Wyslalem maila"
+	end
+
+
+  #User.all.where("isactive = true")
+  #Measurement.all
+
+# where('email_sent_at > :last_hours', 
+	# 											 	 :last_hours => Time.now - 12.hours)
+
+
+
+
+# Teraz wez wszytkie pomiary które zaznaczyl uzytkownik
+# i sprawdzaj czy ktorys ma wyzsze PM niz twoj uzytkownik
+#
+
+  		# UserMailer.notif("wlodku@gmail.com").deliver
 end

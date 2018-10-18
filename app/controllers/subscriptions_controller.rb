@@ -6,8 +6,6 @@ class SubscriptionsController < ApplicationController
   	@installations =Installation.all
   end
 
-
-
   def update
     @user = current_user
     if @user.update_attributes(user_params)
@@ -24,6 +22,5 @@ class SubscriptionsController < ApplicationController
   def user_params
     params.require(:user).permit(installation_ids: [])
   end
-
 
 end
