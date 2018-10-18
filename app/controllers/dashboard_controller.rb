@@ -1,6 +1,9 @@
 class DashboardController < ApplicationController
   include ApplicationHelper
+  
   def index
+    @installations_count = Installation.count
+
 		live = []
     Measurement.last(2000).group_by{ |s| s.installation_id }.each do |s, m|
       live.push(m.last) if m.last.created_at > 3.hours.ago

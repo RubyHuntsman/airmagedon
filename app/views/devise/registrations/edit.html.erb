@@ -44,6 +44,6 @@
 
 <h3>Usuń moje konto!</h3>
 
-<p>USUŃ: <%= button_to "Usuń konto!", registration_path(resource_name), data: { confirm: "Czy jesteś pewny że chcesz to zrobić?" }, method: :delete %></p>
+<p><%= button_to "Usuń konto!", registration_path(resource_name), data: { confirm: "Czy jesteś pewny że chcesz to zrobić?" }, method: :delete %></p>
 
 <%= link_to "Wróć", :back %>

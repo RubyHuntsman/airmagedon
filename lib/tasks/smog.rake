@@ -21,9 +21,9 @@ namespace :smog do
 	    								   measured_at: Time.now, 
 	    								   installation_id: Installation.find_by(sensor_id: id).id
 	    				  				 ) unless data["current"].blank?
-			send_emails
 
 		end  
+		send_emails
   end
   
 	
