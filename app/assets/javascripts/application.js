@@ -21,6 +21,7 @@
 
 $(window).scroll(function(){
     $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+    $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
 });
 
 function area(canvasId, labels, pm10, pm25) {
