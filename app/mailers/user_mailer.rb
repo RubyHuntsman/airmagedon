@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
       live.push(m.last) if m.last.created_at > 3.hours.ago
     end
     @om = live.map { |m| m.qi <= user.critical }
-		mail(to: address,
+		mail(to: user.email,
          subject: "Uwaga na smog",
          delivery_method_options: delivery_options)
   end
