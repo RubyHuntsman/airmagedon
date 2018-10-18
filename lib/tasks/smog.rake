@@ -28,12 +28,18 @@ namespace :smog do
 	desc "spam machine"
   task qwe: :environment do
   	users_to_warn = User.activated.not_spammed
-
+  	live = []
+    Measurement.last(2000).group_by{ |s| s.installation_id }.each do |s, m|
+      live.push(m.last) if m.last.created_at > 3.hours.ago
+    end
+    
   	users_to_warn.each	do |u|
-			if UserMailer.notif(u).deliver
-				u.email_sent_at = Time.now
-				u.save
-			end
+			over_critical_measurements = live.select { |m| m.qi <= u.critical }
+    	followed_by_user = u.subscriptions.map { |s| s.installation_id }
+    	measurements = over_critical_measurements.select { |m| followed.include?(m.installation_id)}
+    	if measurements.count > 0
+    		u.update_attribute(:email_sent_at, Time.now) if UserMailer.notif(u, measurements).deliver
+    	end
   	end
 	end
 
