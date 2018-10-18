@@ -14,6 +14,9 @@ class UserMailer < ApplicationMailer
       live.push(m.last) if m.last.created_at > 3.hours.ago
     end
     @om = live.select { |m| m.qi <= user.critical }
+    followed = user.subsctions.ids
+    @om = @om.select { |m| followed.include?(m.installation_id)}
+
 		mail(to: user.email,
          subject: "Uwaga na smog",
          delivery_method_options: delivery_options)
