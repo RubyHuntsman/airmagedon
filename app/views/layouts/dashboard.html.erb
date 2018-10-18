@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Airmagedon</title>
+    <title>AIRmagedon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,28 +10,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-default scrolling-navbar ">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to "Airmagedon", index_path, class: 'navbar-brand color' %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to "O nas", about_path, class: 'nav-link color' %>
-        </li>
-        <li class="nav-item">
-          <!-- <a class="nav-link color" href="#">Rejestracja</a> -->
-          <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %> 
-        </li>
-        <li class="nav-item">
-          <!-- <a class="nav-link color" href="#">Logowanie</a> -->
-          <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
-        </li>
-      </ul>
-    </nav>
+    <!-- MOBILE LAYOUT -->
+    <div class="d-block d-md-none">
+      <nav class="navbar fixed-top scrolling-navbar navbar-default-mobile">
+        <%= link_to index_path do %>
+          <div class="navbar-brand color">
+            <i class="material-icons">home</i>
+          </div>
+        <% end %>
+        <ul class="navbar-nav">
+          <li class="nav-item menu-icon">
+            <div class="hamburger"></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="meniu">
+      
+      <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
+    </div>
+    <!-- END OF MOBILE LAYOUT -->
+<!-- =========================== -->
+    <!-- TABLETS AND DESKTOPS -->  
+    <div class="d-none d-md-block">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-default scrolling-navbar">
+        <%= link_to "Airmagedon", index_path, class: 'navbar-brand color' %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "O nas", about_path, class: 'nav-link color' %>
+          </li>
+          <li class="nav-item">
+               <!-- <a class="nav-link color" href="#">Rejestracja</a> -->
+            <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %> 
+          </li>
+          <li class="nav-item">
+               <!-- <a class="nav-link color" href="#">Logowanie</a> -->
+            <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
+          </li>
+        </ul>   
+      </nav>
+    </div>
+    <!-- END OF TABLETS AND DESKTOPS -->
     <%= yield %>
     <footer>
-      © Airmagedon - 2k18
+      © AIRmagedon - 2k18
     </footer>   
   </body>
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', ()=>{
+      document.querySelector('.menu-icon').classList.toggle('active');
+      document.querySelector('.meniu').classList.toggle('show');
+    });
+  </script>
 </html>
