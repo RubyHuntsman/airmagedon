@@ -36,7 +36,7 @@ namespace :smog do
   	users_to_warn.each	do |u|
 			over_critical_measurements = live.select { |m| m.qi <= u.critical }
     	followed_by_user = u.subscriptions.map { |s| s.installation_id }
-    	measurements = over_critical_measurements.select { |m| followed.include?(m.installation_id)}
+    	measurements = over_critical_measurements.select { |m| followed_by_user.include?(m.installation_id)}
     	if measurements.count > 0
     		u.update_attribute(:email_sent_at, Time.now) if UserMailer.notif(u, measurements).deliver
     	end
@@ -44,4 +44,4 @@ namespace :smog do
 	end
 
 
-end
+end	
