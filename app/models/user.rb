@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
 	scope :activated, -> { where(isactive: true) }
 	scope :not_spammed, -> { where('email_sent_at < :last_hours OR email_sent_at is NULL', 
-												 	 last_hours: Time.now - 12.hours) }
+												 	 last_hours: Time.now - 8.hours) }
+
 end

@@ -9,6 +9,8 @@
         <%= i.name %>
         <br>
     <% end %>
+    <%= f.check_box :isactive %>
+		<%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %>
 
     <%= f.submit "Zmień", class: 'btn btn-primary' %>
 <% end %>

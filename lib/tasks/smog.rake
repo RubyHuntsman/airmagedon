@@ -15,18 +15,19 @@ namespace :smog do
 	    )
 	    data = JSON.parse(responce)
 		
-			# Measurement.create(pm1: data["current"]["values"][0]["value"].to_i, 
-	  #   								   pm25: data["current"]["values"][1]["value"].to_i, 
-	  #   								   pm10: data["current"]["values"][2]["value"].to_i, 
-	  #   								   measured_at: Time.now, 
-	  #   								   installation_id: Installation.find_by(sensor_id: id).id
-	  #   				  				 ) unless data["current"].blank?
+			Measurement.create(pm1: data["current"]["values"][0]["value"].to_i, 
+	    								   pm25: data["current"]["values"][1]["value"].to_i, 
+	    								   pm10: data["current"]["values"][2]["value"].to_i, 
+	    								   measured_at: Time.now, 
+	    								   installation_id: Installation.find_by(sensor_id: id).id
+	    				  				 ) unless data["current"].blank?
+			send_emails
 
 		end  
   end
   
-	desc "spam machine"
-  task qwe: :environment do
+	
+  def send_emails
   	users_to_warn = User.activated.not_spammed
   	live = []
     Measurement.last(2000).group_by{ |s| s.installation_id }.each do |s, m|

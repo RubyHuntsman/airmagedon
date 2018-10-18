@@ -20,7 +20,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(installation_ids: [])
+    params.require(:user).permit(:isactive, :critical, installation_ids: [])
   end
 
 end

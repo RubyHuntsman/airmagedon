@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-	default from: 'maciej.lokio@interia.pl'
   layout 'mailer'
 
   def notif(user, measurements)
