@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
     Measurement.last(2000).group_by{ |s| s.installation_id }.each do |s, m|
       live.push(m.last) if m.last.created_at > 3.hours.ago
     end
-    @om = live.map { |m| m.qi <= user.critical }
+    @om = live.select { |m| m.qi <= user.critical }
 		mail(to: user.email,
          subject: "Uwaga na smog",
          delivery_method_options: delivery_options)
