@@ -32,10 +32,11 @@
 <p>Podaj dane adresu email z którego będą wysyłane powiadomienia</p>
 
 
-<%= form_tag action: 'smtp_options' do |form| %>
+<%= form_tag action: 'smtp_options' do |f| %>
   <%= text_field_tag :smtp_login, Setting.smtp_login %><br>
   <%= password_field_tag :smtp_password, Setting.smtp_password %><br>
   <%= text_field_tag :smtp_host, Setting.smtp_host %><br>
+  <%= check_box_tag :notif_on, Setting.notif_on, Setting.notif_on %><br>
   <%= submit_tag "Zatwierdź" %>
 <% end %>
 

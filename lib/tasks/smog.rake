@@ -23,7 +23,7 @@ namespace :smog do
 	    				  				 ) unless data["current"].blank?
 
 		end  
-		send_emails
+		send_emails if Setting.notif_on
   end
   
 	

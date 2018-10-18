@@ -70,6 +70,7 @@ class InstallationsController < ApplicationController
     Setting.smtp_login = params[:smtp_login]
     Setting.smtp_password = params[:smtp_password]
     Setting.smtp_host = params[:smtp_host]
+    Setting.notif_on = params[:notif_on] == "on" ? true : false
     redirect_to action: "index"
   end
 
