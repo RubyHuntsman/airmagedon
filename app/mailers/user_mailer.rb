@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
       live.push(m.last) if m.last.created_at > 3.hours.ago
     end
     @om = live.select { |m| m.qi <= user.critical }
-    followed = user.subscriptions.ids
+    followed = user.subscriptions.map { |s| s.installation_id }
     @om = @om.select { |m| followed.include?(m.installation_id)}
 
 		mail(to: user.email,
