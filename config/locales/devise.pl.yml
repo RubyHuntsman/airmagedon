@@ -4,11 +4,11 @@ pl:
   activerecord:
     attributes:
       user:
-        current_password: "Aktualne hasło"
-        email: "Adres e-mail"
-        password: "Hasło"
-        password_confirmation: "Potwierdzenie hasła"
-        remember_me: "Zapamiętaj mnie"
+        current_password: "Aktualne hasło:"
+        email: "Adres e-mail:"
+        password: "Hasło:"
+        password_confirmation: "Potwierdzenie hasła:"
+        remember_me: "Zapamiętaj mnie:"
     errors:
       models:
         user: 
@@ -67,6 +67,21 @@ pl:
       signed_up_but_unconfirmed: "Wiadomość email z instrukcją aktywacji konta została przesłana na Twój adres email. Użyj linku z emaila aby aktywowac konto."
       update_needs_confirmation: "Konto zostalo zaktualizowane. Niemniej jednak przed wprowadzeniem zmian musimy potwierdzić Twój nowy adres email. Za chwilę wyślemy instrukcję na nowy adres."
       updated: "Konto zostało pomyślnie zaktualizowane."
+      shared:
+        links:
+          back: "Powrót"
+          didn_t_receive_confirmation_instructions: "Nie otrzymałeś instrukcji aktywacji konta?"
+          didn_t_receive_unlock_instructions: "Nie otrzymałeś instrukcji odblokowania konta?"
+          forgot_your_password: "Zapomniałeś hasła?"
+          sign_in: "Zaloguj się"
+          sign_in_with_provider: "Zaloguj się przez %{provider}"
+          sign_up: "Zarejestruj się"
+        minimum_password_length:
+          few: "(minimum %{count} znaki)"
+          many: "(minimum %{count} znaków)"
+          one: "(minimum %{count} znak)"
+          other: "(minimum %{count} znaku)"
+
     sessions:
       signed_in: "Zostałeś zalogowany!"
       signed_out: "Zostałeś wylogowany!"
@@ -76,12 +91,12 @@ pl:
       send_paranoid_instructions: "Jeżeli Twoje konto istnieje, otrzymasz wiadomość email z instrukcja jak odblokować konto."
       unlocked: "Twoje konto zostało pomyślnie odblokowane. Zaloguj się by kontynuowac."
     errors:
-    messages:
-      already_confirmed: "Już został aktywowany, proszę sprobować się zalogować."
-      confirmation_period_expired: "Musi zostać potwierdzony w czasie %{period}, wyślij zapytanie o nowy."
-      expired: "Stracil waznosc, wyslij zapytanie o nowy."
-      not_found: "Nie znaleziono!"
-      not_locked: "Nie został zablokowany!"
-      not_saved:
-        one: "Operacja nie została wykonana z powodu błędu:"
-        other: "Operacja nie została wykonana z powodu %{count} błędów:"
+      messages:
+        already_confirmed: "Już został aktywowany, proszę sprobować się zalogować."
+        confirmation_period_expired: "Musi zostać potwierdzony w czasie %{period}, wyślij zapytanie o nowy."
+        expired: "Stracil waznosc, wyslij zapytanie o nowy."
+        not_found: "Nie znaleziono!"
+        not_locked: "Nie został zablokowany!"
+        not_saved:
+          one: "Operacja nie została wykonana z powodu błędu:"
+          other: "Operacja nie została wykonana z powodu %{count} błędów:"
