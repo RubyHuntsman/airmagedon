@@ -21,26 +21,26 @@
 
 // console.log('js dzialajo');
 
-// $(window).scroll(function(){
-//     $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-//     $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
-// });
-// document.addEventListener('DOMContentLoaded', ()=>{
-//     if(location.pathname != '/index' && location.pathname != '/'){
-//         const nav = document.querySelectorAll("nav");
-//         for(let i = 0;i<=nav.length-1;i++){
-//             nav[i].setAttribute("style","background-color: #212529; opacity: 0.7;");
-//         }
-//     }
-//     const menus = document.querySelectorAll('.menu-icon');
-//     const men = document.querySelectorAll('.meniu');
-//     for(let i = 0; i<=menus.length-1;i++){
-//         menus[i].addEventListener('click', ()=>{
-//             menus[i].classList.toggle('active');
-//             men[i].classList.toggle('show');
-//         });
-//     }
-// });
+$(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+    $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
+});
+document.addEventListener('DOMContentLoaded', ()=>{
+    if(location.pathname != '/index' && location.pathname != '/'){
+        const nav = document.querySelectorAll("nav");
+        for(let i = 0;i<=nav.length-1;i++){
+            nav[i].setAttribute("style","background-color: #212529; opacity: 0.7;");
+        }
+    }
+    const menus = document.querySelectorAll('.menu-icon');
+    const men = document.querySelectorAll('.meniu');
+    for(let i = 0; i<=menus.length-1;i++){
+        menus[i].addEventListener('click', ()=>{
+            menus[i].classList.toggle('active');
+            men[i].classList.toggle('show');
+        });
+    }
+});
 
 function area(canvasId, labels, pm10, pm25) {
   var ctx = document.getElementById(canvasId).getContext('2d');

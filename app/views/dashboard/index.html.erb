@@ -289,7 +289,7 @@
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 - średnie godzinowe w ostatnich 24h</h4>
-      <!-- <canvas id="area2"></canvas> -->
+      <canvas id="live"></canvas>
     </div>
   </div>
 </section>
@@ -311,4 +311,7 @@
     <%= @area10.values.map { |v| v.round } %>,
     <%= @area25.values.map { |v| v.round } %>
     );
+  const measurements = <%= raw @multichart_live %>;  
+  live( measurements );
+
 </script>
