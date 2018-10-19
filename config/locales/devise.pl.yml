@@ -6,9 +6,15 @@ pl:
       models:
         user:
           attributes:
-            login: "Wpisz login!"
-            email: "Wpisz Email!"
-            password: "Wpisz haslo!"
+            login:
+              blank: "Wpisz login!"
+            email:
+              blank: "Wpisz Email!"
+            password:
+              blank: "Wpisz haslo!"
+              too_short: "Wpisz dłuższe hasło!"
+            password_confirmation:
+              confirmation: "Wpisz 2 poprawne hasła!"
   devise:
     confirmations:
       confirmed: "Twoj adres e-mail zostal pomyslnie zatwierdzony."
