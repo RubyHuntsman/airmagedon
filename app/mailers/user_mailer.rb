@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+  default from: Setting.smtp_login
   layout 'mailer'
 
   def notif(user, measurements)

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'about', to: 'dashboard#about'
   get 'index', to: 'dashboard#index'
   get 'subscriptions', to: 'subscriptions#index'
-
+  post 'smtp_options', to: 'installations#smtp_options'
   root 'dashboard#index'
   get 'subscriptions/index'
   get 'dashboard/index'

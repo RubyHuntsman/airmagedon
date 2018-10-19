@@ -32,18 +32,30 @@
 <p>Podaj dane adresu email z którego będą wysyłane powiadomienia</p>
 
 
-<%= form_tag action: 'smtp_options' do |f| %>
+<!-- <%= form_tag action: 'smtp_options' do |f| %>
   <%= text_field_tag :smtp_login, Setting.smtp_login %><br>
   <%= password_field_tag :smtp_password, Setting.smtp_password %><br>
   <%= text_field_tag :smtp_host, Setting.smtp_host %><br>
-  <%= check_box_tag :notif_on, Setting.notif_on, Setting.notif_on %><br>
+  <%= hidden_field_tag :notif, '' %>
+  <%= check_box_tag :notif, checked=true %><br>
   <%= submit_tag "Zatwierdź" %>
+<% end %> -->
+
+<%= form_with url: '/smtp_options' do |f| %>
+<%= f.text_field :smtp_login, value: Setting.smtp_login %><br>
+<%= f.password_field :smtp_password, value: Setting.smtp_password %><br>
+<%= f.text_field :smtp_host, value: Setting.smtp_host %><br>
+<%= f.check_box :notif_on, { checked: true ? Setting.notif_on == "1" : false } %>
+<%= f.submit "Zatwierdź2" %>
 <% end %>
 
+
 <h1>Apikey</h1>
-<p>Podaj klucz Airly</p>
+<p>Podaj klucz(e) Airly</p>
 
 <%= form_tag action: 'api_key' do |form| %>
-  <%= text_field_tag :api_key, Setting.api_key %>
+  <%= text_field_tag :api_key, Setting.api_key %><br>
+  <%= text_field_tag :api_key2, Setting.api_key2 %><br>
+  <%= text_field_tag :api_key3, Setting.api_key3 %><br>
   <%= submit_tag "Zatwierdź" %>
 <% end %>

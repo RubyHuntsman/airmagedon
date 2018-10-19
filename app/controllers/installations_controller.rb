@@ -70,12 +70,15 @@ class InstallationsController < ApplicationController
     Setting.smtp_login = params[:smtp_login]
     Setting.smtp_password = params[:smtp_password]
     Setting.smtp_host = params[:smtp_host]
-    Setting.notif_on = params[:notif_on] == "on" ? true : false
+    Setting.notif_on = params[:notif_on]
     redirect_to action: "index"
   end
 
   def api_key
     Setting.api_key = params[:api_key]
+    Setting.api_key2 = params[:api_key2]
+    Setting.api_key3 = params[:api_key3]
+
     redirect_to action: "index"
   end
 
@@ -95,7 +98,7 @@ class InstallationsController < ApplicationController
     end
 
     def check_if_admin
-      unless current_user.is_admin 
+      unless current_user.is_admin
         redirect_to "/"
         flash[:alert] = "Dostęp tylko dla administracji"
       end
