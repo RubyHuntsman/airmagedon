@@ -4,9 +4,8 @@
     <title>AIRmagedon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
@@ -138,18 +137,4 @@
     <!-- END OF DESKTOPS -->
     <%= yield %>
   </body>
-  <script>
-    const menus = document.querySelectorAll('.menu-icon');
-    const men = document.querySelectorAll('.meniu');
-    for(let i = 0; i<=menus.length-1;i++){
-      menus[i].addEventListener('click', ()=>{
-        menus[i].classList.toggle('active');
-        men[i].classList.toggle('show');
-      });
-    }
-    // document.querySelector('.md').addEventListener('click', ()=>{
-    //  document.querySelector('.md').classList.toggle('active');
-    //  document.querySelector('.meniu-md').classList.toggle('show');
-    // });
-  </script>
 </html>

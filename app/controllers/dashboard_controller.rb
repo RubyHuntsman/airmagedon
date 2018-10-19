@@ -11,6 +11,20 @@ class DashboardController < ApplicationController
     @live = live.sort_by{|m| -m[:pm10]}
 
     @area10, @area25 = get24AverageByHoursForArea
+
+
+    @multichart_live = []
+
+    Installation.all.each do |i|
+      @multichart_live.push(i.name)
+      @multichart_live.push(get24AverageByHoursForInstallation(i.id).values.map { |v| v.round })
+    end
+    puts @multichart_live
+
+    @multichart_live.unshift(get24AverageByHoursForInstallation(Installation.first.id).keys.map{|v| v})
+    @multichart_live.unshift("live")
+
+
   end
 
   def about

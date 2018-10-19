@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
@@ -76,18 +76,5 @@
     </div>
     <!-- DESKTOPS -->
     <%= yield %>
-    <!-- <footer>
-      © AIRmagedon - 2k18
-    </footer>  -->  
   </body>
-  <script>
-    document.querySelector('.menu-icon').addEventListener('click', ()=>{
-      document.querySelector('.menu-icon').classList.toggle('active');
-      document.querySelector('.meniu').classList.toggle('show');
-    });
-    document.querySelector('.md').addEventListener('click', ()=>{
-      document.querySelector('.md').classList.toggle('active');
-      document.querySelector('.meniu').classList.toggle('show');
-    });
-  </script>
 </html>
