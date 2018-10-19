@@ -45,7 +45,7 @@ p {
 	color: #fff;
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
-	font-size: 3rem; 
+	font-size: 2.5rem; 
 	color: black;
 }
 @media screen and (max-width: 360px) {
@@ -58,7 +58,7 @@ p {
 		color: black;
   }
 }
-.features {
+.features-mobile {
 	height: 15vh;
 	.box{
 		height: 100%;
@@ -161,27 +161,113 @@ p {
 	margin-left: 0;
 	top: 0;
 }
-
-
-
-
-
+.main-image-md {
+	background: url(<%= asset_path('md-device.jpg') %>) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
+.features-medium {
+	height: 30vh;
+	font-weight: 300;
+	.box{
+		height: 100%;
+		display: inline-block;
+		margin: auto;
+		.icon {
+			height: 7vh;
+			line-height: 7vh;
+			width: 7vh;
+			box-sizing: border-box;
+			font-size: 2rem;
+			float: left;
+			clear: both;
+			i {
+				margin-top: 0;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #f75b5b;
+			}
+		}
+		.text {
+			height: 7vh;
+			line-height: 7vh;
+			box-sizing: border-box;
+			float: left;
+			font-size: 2rem;
+		}
+	}
+}
+.average-chart-md {
+	padding-top: 15vh;
+	height: 70vh;
+	background-color: #fff;
+}
+.average-chart-2-md {
+	padding-top: 15vh;
+	height: 70vh;
+	background-color: #fff;
+}
+.average-md {
+	padding-top: 8vh;
+	background-color: #f7f7f7;
+	height: 30vh;
+}
+.meniu-link-md {
+	font-size: 3rem;
+}
 
 .main-image {
 	background: url(<%= asset_path('image') %>) no-repeat center center fixed;
 	background-size: cover;
 	height: 100vh;
-	/*width: 100vw;*/
-	background-color: #f7f7f7;
 }
 .title {
 	margin-top: 45vh;
 	color: #fff;
 	font-family: 'Lato', sans-serif;
-	font-weight: 100;
-	font-size: 1.5rem;
+	font-weight: 300;
+	font-size: 3rem;
 	cursor: default;
 }
+.features {
+	height: 30vh;
+	font-weight: 300;
+	.box{
+		height: 100%;
+		display: inline-block;
+		margin: auto;
+		.icon {
+			height: 10vh;
+			line-height: 10vh;
+			width: 10vh;
+			box-sizing: border-box;
+			font-size: 2rem;
+			float: left;
+			clear: both;
+			i {
+				margin-top: 0;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #f75b5b;
+			}
+		}
+		.text {
+			height: 10vh;
+			line-height: 10vh;
+			box-sizing: border-box;
+			float: left;
+			font-size: 2rem;
+		}
+	}
+}
+
+
+
+
+
 .navbar-default {
 	height: 6vh;
 	transition: 0.5s ease;
@@ -197,7 +283,7 @@ p {
 	color: #f7f7f7;
 }
 .color:hover {
-	color: red;
+	color: #f75b5b;
 	transition: 0.4s;
 }
 .average-chart {
@@ -224,15 +310,17 @@ p {
 	height: 95vh;
 	background-color: #f7f7f7;
 }
-footer {
+.fixed {
+	position: fixed;
+	right: 1.5vw;
+	top: 8vh;
 	height: 5vh;
-	/*width: 100vw;*/
 	line-height: 5vh;
-	background-color: #212529;
-	color: #f7f7f7;
-	text-align: center;
-	font-size: 12px;
-	opacity: 0.8;
-	position: relative;
-	bottom: 0;
+	display: inline-block;
+	padding: 0 1vw;
+	background-color: #70d666;
+	opacity: 0.7;
+}
+.err {
+	background-color: #d66666;
 }

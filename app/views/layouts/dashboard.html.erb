@@ -25,16 +25,40 @@
         </ul>
       </nav>
     </div>
-    <div class="meniu">
-      
+    <div class="meniu d-block d-md-none">
       <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
+      <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %> 
+      <%= link_to "O nas", about_path, class: 'nav-link color' %>
     </div>
     <!-- END OF MOBILE LAYOUT -->
 <!-- =========================== -->
-    <!-- TABLETS AND DESKTOPS -->  
-    <div class="d-none d-md-block">
+    <!-- DESKTOPS -->
+    <!-- TABLETS -->
+    <div class="d-none d-md-block d-lg-none">
+      <nav class="navbar fixed-top scrolling-navbar navbar-default-mobile">
+        <%= link_to index_path do %>
+          <div class="navbar-brand color">
+            <i class="material-icons">home</i>
+          </div>
+        <% end %>
+        <ul class="navbar-nav">
+          <li class="nav-item menu-icon md">
+            <div class="hamburger"></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="meniu">
+      <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
+      <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %>
+      <%= link_to "O nas", about_path, class: 'nav-link color' %>
+    </div>
+    <!-- END OFTABLETS LAYOUT -->
+<!-- =========================== -->
+    <!-- DESKTOPS --> 
+    <div class="d-none d-lg-block">
       <nav class="navbar fixed-top navbar-expand-lg navbar-default scrolling-navbar">
-        <%= link_to "Airmagedon", index_path, class: 'navbar-brand color' %>
+        <%= link_to "SO AIR", index_path, class: 'navbar-brand color' %>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <%= link_to "O nas", about_path, class: 'nav-link color' %>
@@ -50,15 +74,19 @@
         </ul>   
       </nav>
     </div>
-    <!-- END OF TABLETS AND DESKTOPS -->
+    <!-- DESKTOPS -->
     <%= yield %>
-    <footer>
+    <!-- <footer>
       © AIRmagedon - 2k18
-    </footer>   
+    </footer>  -->  
   </body>
   <script>
     document.querySelector('.menu-icon').addEventListener('click', ()=>{
       document.querySelector('.menu-icon').classList.toggle('active');
+      document.querySelector('.meniu').classList.toggle('show');
+    });
+    document.querySelector('.md').addEventListener('click', ()=>{
+      document.querySelector('.md').classList.toggle('active');
       document.querySelector('.meniu').classList.toggle('show');
     });
   </script>
