@@ -21,26 +21,26 @@
 
 // console.log('js dzialajo');
 
-$(window).scroll(function(){
-    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-    $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
-});
-document.addEventListener('DOMContentLoaded', ()=>{
-    if(location.pathname != '/index' && location.pathname != '/'){
-        const nav = document.querySelectorAll("nav");
-        for(let i = 0;i<=nav.length-1;i++){
-            nav[i].setAttribute("style","background-color: #212529; opacity: 0.7;");
-        }
-    }
-    const menus = document.querySelectorAll('.menu-icon');
-    const men = document.querySelectorAll('.meniu');
-    for(let i = 0; i<=menus.length-1;i++){
-        menus[i].addEventListener('click', ()=>{
-            menus[i].classList.toggle('active');
-            men[i].classList.toggle('show');
-        });
-    }
-})
+// $(window).scroll(function(){
+//     $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+//     $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
+// });
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     if(location.pathname != '/index' && location.pathname != '/'){
+//         const nav = document.querySelectorAll("nav");
+//         for(let i = 0;i<=nav.length-1;i++){
+//             nav[i].setAttribute("style","background-color: #212529; opacity: 0.7;");
+//         }
+//     }
+//     const menus = document.querySelectorAll('.menu-icon');
+//     const men = document.querySelectorAll('.meniu');
+//     for(let i = 0; i<=menus.length-1;i++){
+//         menus[i].addEventListener('click', ()=>{
+//             menus[i].classList.toggle('active');
+//             men[i].classList.toggle('show');
+//         });
+//     }
+// })
 
 function area(canvasId, labels, pm10, pm25) {
   var ctx = document.getElementById(canvasId).getContext('2d');
@@ -134,80 +134,3 @@ function area(canvasId, labels, pm10, pm25) {
     }
   });
 }
-
-
-// function live() {
-//   arguments = arguments[0]
-//   console.log(arguments);
-//   const datasets = [];
-//   for (let i = 2; i < arguments.length; i+=2) {
-//     let color = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 1)';
-//     let obj =  {
-//       label: arguments[i],
-//       data: arguments[i+1],
-//       // hidden: i<7 ? false : true,
-//       hidden: false,
-//       backgroundColor: [
-//           'rgba(0,0,0,0)',
-//       ],
-//       borderColor: [
-//           color,
-//       ],
-//       borderWidth: 1,
-//       fill: false
-//     }
-//     datasets.push(obj)
-//   }
-
-
-//   let pm10 = {
-//       label: '100% wg WHO',
-//       data: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
-//       backgroundColor: [
-//           'rgba(255, 99, 132, 0.1)'
-//       ],
-//       borderColor: [
-//           'rgba(255,99,132,1)'
-//       ],
-//       borderWidth: 1,
-//       pointRadius: 0
-//   }
-//   datasets.push(pm10);
-
-//   // console.log(datasets);
-
-//   var ctx = 'live';
-//   var myChart = new Chart(ctx, {
-//     type: 'line',
-//     data: {
-//         labels: arguments[1],
-//         datasets: datasets
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 scaleLabel: {
-//                   display: true,
-//                   labelString: 'ug/m3'
-//                 },
-//                 ticks: {
-//                     beginAtZero:true
-//                 },
-
-//             }],
-//             xAxes: [
-//             {
-//               scaleLabel: {
-//                 display: true,
-//                 labelString: 'godziny'
-//               },
-//             }
-//             ],
-//         },
-//         legend: {
-//           position:'right'
-//         }
-//     }
-//   });
-// }
-// `
