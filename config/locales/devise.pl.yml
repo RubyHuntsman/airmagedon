@@ -81,7 +81,6 @@ pl:
           many: "(minimum %{count} znaków)"
           one: "(minimum %{count} znak)"
           other: "(minimum %{count} znaku)"
-
     sessions:
       signed_in: "Zostałeś zalogowany!"
       signed_out: "Zostałeś wylogowany!"
@@ -90,13 +89,13 @@ pl:
       send_instructions: "Za chwilę otrzymasz wiadomość email z instrukcją jak odblokować konto."
       send_paranoid_instructions: "Jeżeli Twoje konto istnieje, otrzymasz wiadomość email z instrukcja jak odblokować konto."
       unlocked: "Twoje konto zostało pomyślnie odblokowane. Zaloguj się by kontynuowac."
-    errors:
-      messages:
-        already_confirmed: "Już został aktywowany, proszę sprobować się zalogować."
-        confirmation_period_expired: "Musi zostać potwierdzony w czasie %{period}, wyślij zapytanie o nowy."
-        expired: "Stracil waznosc, wyslij zapytanie o nowy."
-        not_found: "Nie znaleziono!"
-        not_locked: "Nie został zablokowany!"
-        not_saved:
-          one: "Operacja nie została wykonana z powodu błędu:"
-          other: "Operacja nie została wykonana z powodu %{count} błędów:"
+  errors:
+    messages:
+      already_confirmed: "Już został aktywowany, proszę sprobować się zalogować."
+      confirmation_period_expired: "Musi zostać potwierdzony w czasie %{period}, wyślij zapytanie o nowy."
+      expired: "Stracil waznosc, wyslij zapytanie o nowy."
+      not_found: "Nie znaleziono!"
+      not_locked: "Nie został zablokowany!"
+      not_saved:
+        one: "Operacja nie została wykonana z powodu błędu:"
+        other: "Operacja nie została wykonana z powodu %{count} błędów:"
