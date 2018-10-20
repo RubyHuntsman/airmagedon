@@ -6,19 +6,19 @@
       <div class="features-mobile">
         <div class="box">
           <div class="icon">
-            <i class="material-icons" style="font-size: 1.7rem; color: #f75b5b;">search</i>
+            <i class="material-icons icons-mat" style="font-size: 1.7rem;" id="search-mobile">search</i>
           </div>
           <div class="text">
             Monitoring jakości powietrza
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 1.7rem; color: #f75b5b;">timeline</i>
+            <i class="material-icons icons-mat" style="font-size: 1.7rem;" id="timeline-mobile">timeline</i>
           </div>
           <div class="text">
             Analiza statystyczna
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 1.7rem; color: #f75b5b;">track_changes</i>
+            <i class="material-icons icons-mat" style="font-size: 1.7rem;">track_changes</i>
           </div>
           <div class="text">
             System powiadomień
@@ -28,7 +28,7 @@
     </div>
   </div>
 </section>
-<section class="container-fluid d-block d-md-none" style="padding-top: 10vh;">
+<section class="container-fluid d-block d-md-none" style="padding-top: 10vh;" id="search-mobile-target">
   <div class="row justify-content-center">
     <div class="col-12 text-center d-block d-md-none">
       <h4>Pomiary na żywo</h4>
@@ -52,7 +52,7 @@
     </div>
   </div>
 </section>
-<section class="container-fluid average-chart d-block d-md-none">
+<section class="container-fluid average-chart d-block d-md-none" id="timeline-mobile-target">
   <div class="row justify-content-center">
     <div class="col-12">
       <div class="row justify-content-center d-block d-md-none">
@@ -76,19 +76,19 @@
       <div class="features-medium">
         <div class="box">
           <div class="icon">
-            <i class="material-icons" style="font-size: 3rem; color: #f75b5b;">search</i>
+            <i class="material-icons icons-mat" style="font-size: 3rem;" id="search-tablet">search</i>
           </div>
           <div class="text">
             Monitoring jakości powietrza
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 3rem; color: #f75b5b;">timeline</i>
+            <i class="material-icons icons-mat" style="font-size: 3rem;" id="timeline-tablet">timeline</i>
           </div>
           <div class="text">
             Analiza statystyczna
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 3rem; color: #f75b5b;">track_changes</i>
+            <i class="material-icons icons-mat" style="font-size: 3rem;">track_changes</i>
           </div>
           <div class="text">
             System powiadomień
@@ -98,7 +98,7 @@
     </div>    
   </div>
 </section>
-<section class="container-fluid tab d-none d-md-block d-lg-none">
+<section class="container-fluid tab d-none d-md-block d-lg-none" id="timeline-tablet-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pomiary na żywo</h4>
@@ -127,7 +127,7 @@
     </div>
   </div>
 </section>
-<section class="container-fluid average-chart-md d-none d-md-block d-lg-none">
+<section class="container-fluid average-chart-md d-none d-md-block d-lg-none" id="search-tablet-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
@@ -154,19 +154,19 @@
       <div class="features">
         <div class="box">
           <div class="icon">
-            <i class="material-icons" style="font-size: 2.7rem; color: #f75b5b;">search</i>
+            <i class="material-icons icons-mat" style="font-size: 2.7rem;" id="search-desktop">search</i>
           </div>
           <div class="text">
             Monitoring jakości powietrza
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 2.7rem; color: #f75b5b;">timeline</i>
+            <i class="material-icons icons-mat" style="font-size: 2.7rem;" id="timeline-desktop">timeline</i>
           </div>
           <div class="text">
             Analiza statystyczna
           </div>
           <div class="icon">
-            <i class="material-icons" style="font-size: 2.7rem; color: #f75b5b;">track_changes</i>
+            <i class="material-icons icons-mat" style="font-size: 2.7rem;">track_changes</i>
           </div>
           <div class="text">
             System powiadomień
@@ -176,7 +176,7 @@
     </div>    
   </div>
 </section>
-<section class="container-fluid average-chart d-none d-lg-block">
+<section class="container-fluid average-chart d-none d-lg-block" id="timeline-desktop-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
@@ -184,7 +184,7 @@
     </div>
   </div>
 </section>
-<section class="container-fluid tab d-none d-lg-block">
+<section class="container-fluid tab d-none d-lg-block" id="search-desktop-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pomiary na żywo</h4>

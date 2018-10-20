@@ -18,10 +18,32 @@
 //= require popper
 //= require bootstrap-sprockets
 
+function smoothScroll(tar, duration){
+  let target = document.querySelector(tar);
+  let targetPos = target.getBoundingClientRect().top;
+  let startPos = window.pageYOffset;
+  let distance = targetPos - startPos;
+  let startTime = null;
 
+  function animation(currentTime){
+    if(startTime === null) startTime = currentTime;
+    let timeElapsed = currentTime - startTime;
+    let run = ease(timeElapsed, startPos, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  }
+
+  function ease(t, b, c, d){
+    t /= d /2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 *(t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
 
 document.addEventListener('DOMContentLoaded', ()=>{
-  
   let desktop_nav = document.querySelector('#nav-scroll');
   let mobile_nav = document.querySelectorAll('.navbar-default-mobile');
   window.addEventListener('scroll', () => {
@@ -53,6 +75,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             men[i].classList.toggle('show');
         });
     }
+
+    //desktop
+    document.querySelector('#search-desktop').addEventListener('click', () => {smoothScroll("#search-desktop-target", 1000)});
+    document.querySelector('#timeline-desktop').addEventListener('click', () => {smoothScroll("#timeline-desktop-target", 1000)});
+    //tablet
+    document.querySelector('#search-tablet').addEventListener('click', () => {smoothScroll("#search-tablet-target", 1000)});
+    document.querySelector('#timeline-tablet').addEventListener('click', () => {smoothScroll("#timeline-tablet-target", 1000)});
+    //mobile
+    document.querySelector('#search-mobile').addEventListener('click', () => {smoothScroll("#search-mobile-target", 1000)});
+    document.querySelector('#timeline-mobile').addEventListener('click', () => {smoothScroll("#timeline-mobile-target", 1000)});
 });
 
 function area(canvasId, labels, pm10, pm25) {
