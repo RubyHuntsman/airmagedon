@@ -26,6 +26,7 @@ pl:
               confirmation: "Wpisz 2 poprawne hasła!"
             current_password:
               blank: "Aktualnie hasło nie zostało wpisane!"
+              invalid: "Złe aktualne hasło!"
   devise:
     confirmations:
       confirmed: "Twój email został pomyślnie zatwierdzony!"

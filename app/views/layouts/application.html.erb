@@ -26,13 +26,13 @@
     </div>
     <div class="meniu d-block d-md-none">
       <% if user_signed_in? %>
-        Zalogowany jako <strong><%= current_user.login %></strong><br>
+        <p class="user-mobile">Zalogowany jako<span class="user-mobile-nick"> <%= current_user.login %></span></p><br>
         <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
         <% if current_user.is_admin %>
           <%= link_to "Ustawienia", installations_path, class: 'nav-link color' %>
         <% end %>
         <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color'%>
-        <%= link_to "O nas", about_path, class: 'nav-link color' %>
+        <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
         <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, class: 'nav-link color'  %>
       <% else %>
         <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %>
@@ -40,11 +40,21 @@
       <% end %>
           
       <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+            <p class="alert alert-success"><%= notice %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
+          <% end %>
     </div>
     <!-- END OF MOBILE LAYOUT -->
 <!-- =========================== -->
@@ -69,13 +79,13 @@
     </div>
     <div class="meniu d-none d-md-block d-lg-none">
       <% if user_signed_in? %>
-        Zalogowany jako <strong><%= current_user.login %></strong><br>
+        <p class="user-mobile">Zalogowany jako<span class="user-mobile-nick"> <%= current_user.login %></span></p><br>
         <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
         <% if current_user.is_admin %>
           <%= link_to "Ustawienia", installations_path, class: 'nav-link color' %>
         <% end %>
         <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color'%>
-        <%= link_to "O nas", about_path, class: 'nav-link color' %>
+        <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
         <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, class: 'nav-link color'  %>
       <% else %>
         <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %>
@@ -83,11 +93,21 @@
       <% end %>
           
       <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+            <p class="alert alert-success"><%= notice %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
+          <% end %>
     </div>
     <!-- END OFTABLETS LAYOUT -->
 
@@ -101,7 +121,7 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= current_user.login %>
+              <p class="nav-link active user-class"><%= current_user.login %></p>
             </li>
             <li class="nav-item">
               <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
@@ -115,7 +135,7 @@
               <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color'%>
             </li>
             <li class="nav-item">
-              <%= link_to "O nas", about_path, class: 'nav-link color' %>
+              <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
             </li>
             <li class="nav-item">
               <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, class: 'nav-link color'  %>
@@ -124,12 +144,21 @@
             <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %>
             <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
           <% end %>
-          
           <% if notice %>
             <p class="alert alert-success"><%= notice %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
           <% end %>
           <% if alert %>
             <p class="alert alert-danger"><%= alert %></p>
+            <script>
+              setTimeout(() => {
+                document.querySelector('.alert').remove();
+              }, 1500); 
+            </script>
           <% end %>
         </ul>   
       </nav>
