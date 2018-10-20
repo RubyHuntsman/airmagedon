@@ -24,6 +24,8 @@ pl:
               too_short: "Wpisz dłuższe hasło!"
             password_confirmation:
               confirmation: "Wpisz 2 poprawne hasła!"
+            current_password:
+              blank: "Aktualnie hasło nie zostało wpisane!"
   devise:
     confirmations:
       confirmed: "Twój email został pomyślnie zatwierdzony!"

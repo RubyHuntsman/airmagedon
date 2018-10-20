@@ -1,14 +1,148 @@
-<h1>Wybrane lokalizacje</h1>
-
-<%= form_for @user, url: {action: "update"} do |f| %>
-	<%= hidden_field_tag "user[installation_ids][]", nil%>
-    <% @installations.each do |i| %>
-        <%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i) %>
-        <%= i.name %>
-        <br>
-    <% end %>
-    <%= f.check_box :isactive %>
-		<%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %>
-
-    <%= f.submit "Zmień", class: 'btn btn-primary' %>
-<% end %>
+<section class="container-fluid static d-none d-lg-block">
+	<div class="row justify-content-center">
+		<div class="col-4">
+			<h2 class="text-center">Wybrane lokalizacje</h2>
+			<div class="row justify-content-center">
+				<div class="col-6">
+					<br>
+					<%= form_for @user, url: {action: "update"} do |f| %>
+					<table class="table-sm">
+						<thead>
+							<tr>
+								<th>
+									STAN
+								</th>
+								<th>
+									Miejsce
+								</th>
+							</tr>
+						</thead>
+						<% @installations.each do |i| %>
+						<tr>
+							<th scope="row">
+								<label class="switch trans">
+									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
+									<span class="slider round"></span>
+								</label>
+							</th>
+							<td>
+								<%= i.name %>
+							</td>
+						</tr>
+						<% end %>
+						<tr>
+							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
+							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
+						</tr>
+					</table>
+					<div class="actions">
+						<label class="switch">
+							<%= f.check_box :isactive, class: 'checkbox' %>
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- BŁAGAM ZMIEN TO, TOTALNIE NIE MAM POMYSŁU CO TUTAJ DAĆ, NAWET CAŁOŚĆ-->
+<section class="container-fluid static d-none d-md-block d-lg-none">
+	<div class="row justify-content-center row-color">
+		<div class="col-7">
+			<h2 class="text-center">Wybrane lokalizacje</h2>
+			<div class="row justify-content-center">
+				<div class="col-9">
+					<br>
+					<%= form_for @user, url: {action: "update"} do |f| %>
+					<table class="table-sm">
+						<thead>
+							<tr>
+								<th>
+									STAN
+								</th>
+								<th>
+									Miejsce
+								</th>
+							</tr>
+						</thead>
+						<% @installations.each do |i| %>
+						<tr>
+							<th scope="row">
+								<label class="switch trans">
+									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
+									<span class="slider round"></span>
+								</label>
+							</th>
+							<td>
+								<%= i.name %>
+							</td>
+						</tr>
+						<% end %>
+						<tr>
+							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
+							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
+						</tr>
+					</table>
+					<div class="actions">
+						<label class="switch">
+							<%= f.check_box :isactive, class: 'checkbox' %>
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="container-fluid static-mobile d-block d-md-none">
+	<div class="row justify-content-center row-color">
+		<div class="col-10">
+			<h2 class="text-center">Wybrane lokalizacje</h2>
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<br>
+					<%= form_for @user, url: {action: "update"} do |f| %>
+					<table class="table-sm">
+						<thead>
+							<tr>
+								<th>
+									STAN
+								</th>
+								<th>
+									Miejsce
+								</th>
+							</tr>
+						</thead>
+						<% @installations.each do |i| %>
+						<tr>
+							<th scope="row">
+								<label class="switch trans">
+									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
+									<span class="slider round"></span>
+								</label>
+							</th>
+							<td>
+								<%= i.name %>
+							</td>
+						</tr>
+						<% end %>
+						<tr>
+							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
+							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
+						</tr>
+					</table>
+					<div class="actions">
+						<label class="switch">
+							<%= f.check_box :isactive, class: 'checkbox' %>
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
