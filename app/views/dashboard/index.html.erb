@@ -32,7 +32,7 @@
   <div class="row justify-content-center">
     <div class="col-12 text-center d-block d-md-none">
       <h4>Pomiary na żywo</h4>
-      <!-- <h6>Ostatnia aktualizacja: <measurement_last %></h6> -->
+      <h6>Ostatnia aktualizacja: <%= @Measurement_last %></h6>
       <table class="table table-striped table-light shadow-lg">
         <thead>
           <tr>
@@ -57,30 +57,8 @@
     <div class="col-12">
       <div class="row justify-content-center d-block d-md-none">
         <div class="col-12 text-center">
-          <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h</h4>
+          <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
           <canvas id="area2" style="width: 100%; height: 50vh;"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="container-fluid average d-block d-md-none">
-  <div class="row justify-content-center">
-    <div class="col-12 text-center">
-      <h4>Średnia z ostatniej doby</h4>
-      <br>
-      <div class="row justify-content-center d-block d-md-none">
-        <div class="col-12">
-          <table class="table table-striped table-light shadow-lg">
-            <tr>
-              <th scope="row">PM10</th>
-              <td>107% normy WHO (54 µg/m3)</td>
-            </tr>
-            <tr>
-              <th scope="row">PM2.5</th>
-              <td>146% normy WHO (36 µg/m3)</td>
-            </tr>
-          </table>
         </div>
       </div>
     </div>
@@ -151,29 +129,8 @@
 <section class="container-fluid average-chart-md d-none d-md-block d-lg-none">
   <div class="row justify-content-center">
     <div class="col-9">
-      <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h</h4>
+      <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
       <canvas id="area3" style="width: 100%; height: 40vh;"></canvas>
-    </div>
-  </div>
-</section>
-<section class="container-fluid average-md d-none d-md-block d-lg-none">
-  <div class="row justify-content-center">
-    <div class="col-9">
-      <h4>Średnie z ostatniej doby</h4>
-      <div class="row justify-content-center d-md-block d-lg-none">
-        <div class="col-8">
-          <table class="table table-striped table-light shadow-lg">
-            <tr>
-              <th scope="row">PM10</th>
-              <td>107% normy WHO (54 µg/m3)</td>
-            </tr>
-            <tr>
-              <th scope="row">PM2.5</th>
-              <td>146% normy WHO (36 µg/m3)</td>
-            </tr>
-          </table>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -181,7 +138,7 @@
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 - średnie godzinowe w ostatnich 24h</h4>
-      <canvas id="live"></canvas>
+      <canvas id="live1"></canvas>
     </div>
   </div>
 </section>
@@ -221,30 +178,8 @@
 <section class="container-fluid average-chart d-none d-lg-block">
   <div class="row justify-content-center">
     <div class="col-9">
-      <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h</h4>
+      <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
       <canvas id="area1"></canvas>
-    </div>
-  </div>
-</section>
-<section class="container-fluid average d-none d-lg-block">
-  <div class="row justify-content-center">
-    <div class="col-9">
-      <h4>Średnie z ostatniej doby</h4>
-      <br>
-      <div class="row justify-content-center d-none d-lg-block">
-        <div class="col-5">
-          <table class="table table-striped table-light shadow-lg">
-            <tr>
-              <th scope="row">PM10</th>
-              <td>107% normy WHO (54 µg/m3)</td>
-            </tr>
-            <tr>
-              <th scope="row">PM2.5</th>
-              <td>146% normy WHO (36 µg/m3)</td>
-            </tr>
-          </table>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -305,7 +240,8 @@
     <%= @area10.values.map { |v| v.round } %>,
     <%= @area25.values.map { |v| v.round } %>
     );
-  const measurements = <%= raw @multichart_live %>;  
-  live( measurements );
+  let measurements = <%= raw @multichart_live %>;
+  measurements[0] = "live"  
+  live(measurements);
 
 </script>
