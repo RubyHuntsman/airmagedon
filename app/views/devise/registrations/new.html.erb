@@ -1,32 +1,104 @@
-<section class="container-fluid about">
+<section class="container-fluid static d-block d-md-none">
   <div class="row justify-content-center">
-    <div class="col-6 text-center">
-      <h2>Zarejestruj się!</h2>
+    <div class="col-10">
+      <h2 class="text-center">Zarejestruj się!</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         <div class="field">
           <%= f.label :login %><br />
-          <%= f.text_field :login, autofocus: true %>
+          <%= f.text_field :login, autofocus: true, class: 'form-control' %>
         </div>
          <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
         <div class="field">
           <%= f.label :password, "Hasło" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(Minimum <%= @minimum_password_length %> znaków)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "Nowe hasło" %>
+          <%= f.password_field :password, autocomplete: "Nowe hasło", class: 'form-control' %>
         </div>
         <div class="field">
-          <%= f.label :password_confirmation, "Potwierdz hasło" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło" %>
+          <%= f.label :password_confirmation, "Potwierdź hasło" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło", class: 'form-control' %>
         </div>
         <div class="actions">
-          <%= f.submit "Zarejestruj się!" %>
+          <br>
+          <%= f.submit "Zarejestruj się!", class: 'btn btn-outline-secondary' %>
         </div>
       <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
+<section class="container-fluid static d-none d-md-block d-lg-none">
+  <div class="row justify-content-center">
+    <div class="col-7">
+      <h2 class="text-center">Zarejestruj się!</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :login %><br />
+          <%= f.text_field :login, autofocus: true, class: 'form-control' %>
+        </div>
+         <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :password, "Hasło" %>
+          <% if @minimum_password_length %>
+          <em>(Minimum <%= @minimum_password_length %> znaków)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "Nowe hasło", class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "Potwierdź hasło" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło", class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <br>
+          <%= f.submit "Zarejestruj się!", class: 'btn btn-outline-secondary' %>
+        </div>
+      <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
+<section class="container-fluid static d-none d-lg-block">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h2 class="text-center">Zarejestruj się!</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :login %><br />
+          <%= f.text_field :login, autofocus: true, class: 'form-control' %>
+        </div>
+         <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :password, "Hasło" %>
+          <% if @minimum_password_length %>
+          <em>(Minimum <%= @minimum_password_length %> znaków)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "Nowe hasło", class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "Potwierdź hasło" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "Nowe hasło", class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <br>
+          <%= f.submit "Zarejestruj się!", class: 'btn btn-outline-secondary' %>
+        </div>
+      <% end %>
+      <br>
       <%= render "devise/shared/links" %>
     </div>
   </div>

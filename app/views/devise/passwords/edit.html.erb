@@ -1,3 +1,47 @@
+<section class="container-fluid static d-block d-md-none">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h2 class="text-center">Zmień swoje hasło</h2>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class="field">
+          <%= f.label :password, "Nowe hasło" %><br />
+          <% if @minimum_password_length %>
+            <em>(Minimum <%= @minimum_password_length %> znaków)</em><br/>
+          <% end %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "nowe hasło", class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "Potwierdź nowe hasło" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", , class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Zmień hasło" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
+<section class="container-fluid static d-none d-md-block d-lg-none">
+  <div class="row justify-content-center">
+    <div class="col-7">
+
+    </div>
+  </div>
+</section>
+<section class="container-fluid static d-none d-lg-block">
+  <div class="row justify-content-center">
+    <div class="col-4">
+
+    </div>
+  </div>
+</section>
+
+
+
+
 <h2>Zmień swoje hasło</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
