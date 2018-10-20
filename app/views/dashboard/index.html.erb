@@ -64,6 +64,7 @@
     </div>
   </div>
 </section>
+</section>
 <!-- END OF MOBILE LAYOUT -->
 <!-- =========================== -->
 <!-- TABLETS -->
@@ -240,8 +241,9 @@
     <%= @area10.values.map { |v| v.round } %>,
     <%= @area25.values.map { |v| v.round } %>
     );
-  let measurements = <%= raw @multichart_live %>;
-  measurements[0] = "live"  
-  live(measurements);
+
+  const measurements = <%= raw @multichart_live %>; 
+  live(measurements, "live");
+  live(measurements, "live1");
 
 </script>

@@ -19,13 +19,26 @@
 //= require bootstrap-sprockets
 
 
-// console.log('js dzialajo');
 
-$(window).scroll(function(){
-    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-    $('.navbar-default-mobile').toggleClass('mobile-scrolled', $(this).scrollTop() > 50);
-});
 document.addEventListener('DOMContentLoaded', ()=>{
+  
+  let desktop_nav = document.querySelector('#nav-scroll');
+  let mobile_nav = document.querySelectorAll('.navbar-default-mobile');
+  window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 50){
+      desktop_nav.classList.add('scrolled');
+      for (let i = 0; i <= mobile_nav-1; i++) {
+        mobile_nav[i].classList.add('mobile-scrolled');
+      }
+    }
+    else {
+      desktop_nav.classList.remove('scrolled');
+      for (let i = 0; i <= mobile_nav-1; i++) {
+        mobile_nav[i].classList.remove('mobile-scrolled');
+      }
+    }
+  });
+
     if(location.pathname != '/index' && location.pathname != '/'){
         const nav = document.querySelectorAll("nav");
         for(let i = 0;i<=nav.length-1;i++){
@@ -135,15 +148,14 @@ function area(canvasId, labels, pm10, pm25) {
   });
 }
 
-function live() {
-  arguments = arguments[0]
+function live(mes, canvasId) {
   console.log(arguments);
   const datasets = [];
-  for (let i = 2; i < arguments.length; i+=2) {
+  for (let i = 2; i < mes.length; i+=2) {
     let color = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 1)';
     let obj =  {
-      label: arguments[i],
-      data: arguments[i+1],
+      label: mes[i],
+      data: mes[i+1],
       // hidden: i<7 ? false : true,
       hidden: false,
       backgroundColor: [
@@ -175,11 +187,11 @@ function live() {
 
   // console.log(datasets);
 
-  var ctx = 'live';
+  var ctx = canvasId;
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: arguments[1],
+        labels: mes[1],
         datasets: datasets
     },
     options: {
