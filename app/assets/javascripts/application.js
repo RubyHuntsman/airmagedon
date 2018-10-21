@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             nav[i].setAttribute("style","background-color: #212529; opacity: 0.7;");
         }
     }
+    else {
+      //desktop
+      document.querySelector('#search-desktop').addEventListener('click', () => {smoothScroll("#search-desktop-target", 1000)});
+      document.querySelector('#timeline-desktop').addEventListener('click', () => {smoothScroll("#timeline-desktop-target", 1000)});
+      //tablet
+      document.querySelector('#search-tablet').addEventListener('click', () => {smoothScroll("#search-tablet-target", 1000)});
+      document.querySelector('#timeline-tablet').addEventListener('click', () => {smoothScroll("#timeline-tablet-target", 1000)});
+      //mobile
+      document.querySelector('#search-mobile').addEventListener('click', () => {smoothScroll("#search-mobile-target", 1000)});
+      document.querySelector('#timeline-mobile').addEventListener('click', () => {smoothScroll("#timeline-mobile-target", 1000)});
+    }
     const menus = document.querySelectorAll('.menu-icon');
     const men = document.querySelectorAll('.meniu');
     for(let i = 0; i<=menus.length-1;i++){
@@ -76,15 +87,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
     }
 
-    //desktop
-    document.querySelector('#search-desktop').addEventListener('click', () => {smoothScroll("#search-desktop-target", 1000)});
-    document.querySelector('#timeline-desktop').addEventListener('click', () => {smoothScroll("#timeline-desktop-target", 1000)});
-    //tablet
-    document.querySelector('#search-tablet').addEventListener('click', () => {smoothScroll("#search-tablet-target", 1000)});
-    document.querySelector('#timeline-tablet').addEventListener('click', () => {smoothScroll("#timeline-tablet-target", 1000)});
-    //mobile
-    document.querySelector('#search-mobile').addEventListener('click', () => {smoothScroll("#search-mobile-target", 1000)});
-    document.querySelector('#timeline-mobile').addEventListener('click', () => {smoothScroll("#timeline-mobile-target", 1000)});
 });
 
 function area(canvasId, labels, pm10, pm25) {

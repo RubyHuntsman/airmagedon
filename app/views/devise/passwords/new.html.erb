@@ -1,16 +1,60 @@
-<h2>Zapomniałeś hasła?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Wyślij mi instrukcję zmiany hasła" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<section class="container-fluid static d-block d-md-none">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<h2 class="text-center">Zapomniałeś hasła?</h2>
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			<%= devise_error_messages! %>
+			<div class="field">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+			</div>
+			<div class="actions">
+				<br>
+				<%= f.submit "Wyślij mi instrukcję zmiany hasła", class: 'btn btn-outline-secondary'  %>
+			</div>
+			<br>
+			<%= render "devise/shared/links" %>
+			<% end %>
+		</div>
+	</div>
+</section>
+<section class="container-fluid static d-none d-md-block d-lg-none">
+	<div class="row justify-content-center">
+		<div class="col-7">
+			<h2 class="text-center">Zapomniałeś hasła?</h2>
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			<%= devise_error_messages! %>
+			<div class="field">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+			</div>
+			<div class="actions">
+				<br>
+				<%= f.submit "Wyślij mi instrukcję zmiany hasła", class: 'btn btn-outline-secondary' %>
+			</div>
+			<br>
+			<%= render "devise/shared/links" %>
+			<% end %>
+		</div>
+	</div>
+</section>
+<section class="container-fluid static d-none d-lg-block">
+	<div class="row justify-content-center">
+		<div class="col-4">
+			<h2 class="text-center">Zapomniałeś hasła?</h2>
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			<%= devise_error_messages! %>
+			<div class="field">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+			</div>
+			<div class="actions">
+				<br>
+				<%= f.submit "Wyślij mi instrukcję zmiany hasła", class: 'btn btn-outline-secondary' %>
+			</div>
+			<br>
+			<%= render "devise/shared/links" %>
+			<% end %>
+		</div>
+	</div>
+</section>
