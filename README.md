@@ -1,6 +1,6 @@
-# Airmagedon
+# AIRmageddon
 
-Web application presenting data from airly sensors in an accessible graphic forms
+AIRmageddon - web application presenting data from airly sensors in an accessible graphic forms. AIRmageddon also provides an email notification system, which involves alerts and air pollution's level.
 
 ![Graph graphic ](https://raw.githubusercontent.com/RubyHuntsman/airmagedon/master/public/git_img.png)
 
