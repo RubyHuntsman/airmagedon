@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(login: 'admin', is_admin: true, password: 'aezakmi', password_confirmation: 'aezakmi')
+User.create(login: 'user', is_admin: false, password: 'user', password_confirmation: 'user')
 
 # Installation.create(name: 'Jeleń Kościół', sensor_id: '2290')
 # Installation.create(name: 'Jeleń Wygoda', sensor_id: '2953')

@@ -1,6 +1,11 @@
 # Airmagedon
 
-Description...
+Web application presenting data from airly sensors in an accessible graphic forms
+
+![Graph graphic ](https://raw.githubusercontent.com/RubyHuntsman/airmagedon/master/public/git_img.png)
+
+Below a link to the company with which it provides its api from which the data originates
+https://airly.eu/
 
 ### Stack
 * [Ruby on Rails]  
@@ -29,6 +34,7 @@ Before installing, make sure that you have the correct language version
 ```sh
 $ git clone git@github.com:RubyHuntsman/airmagedon.git
 $ cd airmagedon/
+$ bundle
 $ rails db:migrate
 $ rails s
 ```
@@ -38,14 +44,15 @@ http://localhost:3000/
 ### Pre setup user
 | User | Password |
 | ------ | ------ |
-| Admin | ******* |
-| User | ******* |
+| admin | aezakmi |
+| user | user |
 
 
 ### Todos
  - Add SMS alerts
- - Collect 
- - Write tests
+ - Collecting a large amount of measurement data
+ - Write unit tests
+ - Progressive web app
  - Add night mode
 
   [Ruby on Rails]: <https://rubyonrails.org/>
