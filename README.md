@@ -4,7 +4,10 @@ Web application presenting data from airly sensors in an accessible graphic form
 
 ![Graph graphic ](https://raw.githubusercontent.com/RubyHuntsman/airmagedon/master/public/git_img.png)
 
-Below a link to the company with which it provides its api from which the data originates
+# Airly
+![Graph graphic ](https://raw.githubusercontent.com/RubyHuntsman/airmagedon/master/public/git_airly.png)
+
+Link to the company with which it provides its api from which the data originates
 https://airly.eu/
 
 ### Stack
