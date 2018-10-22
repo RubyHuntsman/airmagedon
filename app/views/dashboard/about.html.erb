@@ -1,62 +1,60 @@
-<section class="container-fluid static-mobile d-block d-md-none">
+<section class="container-fluid static-install d-block d-md-none">
 	<div class="row justify-content-center text-justify">
 		<div class="col-12">
 			<h1 class="text-center">O aplikacji</h1>
-			<br>
-			<p>
-				W Polsce jest stosunkowo niewiele stacji pomiaru powietrza WIOŚ, w naszym mieście nie ma ani jednej. Wykorzystujemy czujniki smogu firmy Airly, aby utworzyć system ostrzegania mieszkańców via email oraz graficznie przedstawić zmienność zanieczyszczenia powietrza w czasie i przestrzeni.
-			</p>
-			<br>
-			<br>
-			<p>
-				Strona główna firmy, dzięki której (ble ble ble):
-			</p>
-			<br>
+			<p>Aplikacja działa w oparciu o pomiary firmy <a href="https://airly.eu/pl/">Airly.</a></p><br><br>
 			<a href="https://airly.eu/pl/" target="_blank">
 				<%= image_tag('airly.png') %>
 			</a>
+			<br><br>
+			<ol>
+				<li>Aplikacja łączy się z <b>publicznym</b> <a href="https://developer.airly.eu/docs">API Arily</a> co 10 minut i zapisuje pomiary w bazie danych.</li>
+				<li>Użytkownik <b>z rolą administratora</b> dodaje analizowane stacje (np. z całego miasta, dzielnicy albo powiatu) oraz uzupełnia parametry konfiguracyjne: klucz API oraz ustawienia SMTP. Może też włączyć lub wyłączyć <b>System Ostrzegania o Smogu (SOS).</b></li>
+				<li>Użytkownicy <b>po rejestracji i zalogowaniu</b> wybierają obserwowane stacje oraz wybierają wartości progowe zanieczyszczenia powietrza po przekroczeniu których wysyłane zostaną ostrzeżenia.
+				Wiadomości email  zawierają ostrzeżenie wraz wartościami pyłów zawieszonych PM10 i PM2.5 dla wybranych stacji. Powiadomienia nie są wysyłane częściej niż co 8 godzin.
+				</li>
+				<li><b>Niezalogowany</b> użytkownik ma dostęp do najnowszych pomiarów oraz podstawowych statystyk w formie wykresów. Docelowo aplikacja będzie udostepniać również dane archiwalne.</li>
+			</ol>
 		</div>
 	</div>
 </section>
-<section class="container-fluid static d-none d-md-block d-lg-none">
+<section class="container-fluid static-install d-none d-md-block d-lg-none">
 	<div class="row justify-content-center text-justify">
 		<div class="col-6">
 			<h1 class="text-center">O aplikacji</h1>
-			<br>
-			<p>
-				W Polsce jest stosunkowo niewiele stacji pomiaru powietrza WIOŚ, w naszym mieście nie ma ani jednej. Wykorzystujemy czujniki smogu firmy Airly, aby utworzyć system ostrzegania mieszkańców via email oraz graficznie przedstawić zmienność zanieczyszczenia powietrza w czasie i przestrzeni.
-			</p>
-			<br>
-			<br>
-			<p>
-				Strona główna firmy, dzięki której (ble ble ble):
-			</p>
-			<br>
-			<br>
+			<p>Aplikacja działa w oparciu o pomiary firmy <a href="https://airly.eu/pl/">Airly.</a></p><br><br>
 			<a href="https://airly.eu/pl/" target="_blank">
 				<%= image_tag('airly.png') %>
 			</a>
+			<br><br>
+			<ol>
+				<li>Aplikacja łączy się z <b>publicznym</b> <a href="https://developer.airly.eu/docs">API Arily</a> co 10 minut i zapisuje pomiary w bazie danych.</li>
+				<li>Użytkownik <b>z rolą administratora</b> dodaje analizowane stacje (np. z całego miasta, dzielnicy albo powiatu) oraz uzupełnia parametry konfiguracyjne: klucz API oraz ustawienia SMTP. Może też włączyć lub wyłączyć <b>System Ostrzegania o Smogu (SOS).</b></li>
+				<li>Użytkownicy <b>po rejestracji i zalogowaniu</b> wybierają obserwowane stacje oraz wybierają wartości progowe zanieczyszczenia powietrza po przekroczeniu których wysyłane zostaną ostrzeżenia.
+				Wiadomości email  zawierają ostrzeżenie wraz wartościami pyłów zawieszonych PM10 i PM2.5 dla wybranych stacji. Powiadomienia nie są wysyłane częściej niż co 8 godzin.
+				</li>
+				<li><b>Niezalogowany</b> użytkownik ma dostęp do najnowszych pomiarów oraz podstawowych statystyk w formie wykresów. Docelowo aplikacja będzie udostepniać również dane archiwalne.</li>
+			</ol>
 		</div>
 	</div>
 </section>
-<section class="container-fluid static d-none d-lg-block">
+<section class="container-fluid static-install d-none d-lg-block">
 	<div class="row justify-content-center text-justify">
 		<div class="col-6">
 			<h1 class="text-center">O aplikacji</h1>
-			<br>
-			<p>
-				W Polsce jest stosunkowo niewiele stacji pomiaru powietrza WIOŚ, w naszym mieście nie ma ani jednej. Wykorzystujemy czujniki smogu firmy Airly, aby utworzyć system ostrzegania mieszkańców via email oraz graficznie przedstawić zmienność zanieczyszczenia powietrza w czasie i przestrzeni.
-			</p>
-			<br>
-			<br>
-			<p>
-				Strona główna firmy, dzięki której (ble ble ble):
-			</p>
-			<br>
-			<br>
+			<p>Aplikacja działa w oparciu o pomiary firmy <a href="https://airly.eu/pl/">Airly.</a></p><br><br>
 			<a href="https://airly.eu/pl/" target="_blank">
 				<%= image_tag('airly.png') %>
 			</a>
+			<br><br>
+			<ol>
+				<li>Aplikacja łączy się z <b>publicznym</b> <a href="https://developer.airly.eu/docs">API Arily</a> co 10 minut i zapisuje pomiary w bazie danych.</li>
+				<li>Użytkownik <b>z rolą administratora</b> dodaje analizowane stacje (np. z całego miasta, dzielnicy albo powiatu) oraz uzupełnia parametry konfiguracyjne: klucz API oraz ustawienia SMTP. Może też włączyć lub wyłączyć <b>System Ostrzegania o Smogu (SOS).</b></li>
+				<li>Użytkownicy <b>po rejestracji i zalogowaniu</b> wybierają obserwowane stacje oraz wybierają wartości progowe zanieczyszczenia powietrza po przekroczeniu których wysyłane zostaną ostrzeżenia.
+				Wiadomości email  zawierają ostrzeżenie wraz wartościami pyłów zawieszonych PM10 i PM2.5 dla wybranych stacji. Powiadomienia nie są wysyłane częściej niż co 8 godzin.
+				</li>
+				<li><b>Niezalogowany</b> użytkownik ma dostęp do najnowszych pomiarów oraz podstawowych statystyk w formie wykresów. Docelowo aplikacja będzie udostepniać również dane archiwalne.</li>
+			</ol>
 		</div>
 	</div>
 </section>

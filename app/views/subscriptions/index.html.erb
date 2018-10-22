@@ -2,7 +2,8 @@
 	<div class="row justify-content-center">
 		<div class="col-3.5">
 			<h2 class="text-center">Wybrane lokalizacje</h2>
-			<%= form_for @user, url: {action: "update"} do |f| %>			
+			<%= form_for @user, url: {action: "update"} do |f| %>		
+				<%= hidden_field_tag "user[installation_ids][]", nil %>
 				<div class="actions text-center">
 					<div class="meas-alert">POWIADOMIENIA</div>
 					OFF
@@ -56,6 +57,7 @@
 		<div class="col-3.5">
 			<h2 class="text-center">Wybrane lokalizacje</h2>
 			<%= form_for @user, url: {action: "update"} do |f| %>			
+				<%= hidden_field_tag "user[installation_ids][]", nil %>
 				<div class="actions text-center">
 					<div class="meas-alert">POWIADOMIENIA</div>
 					OFF
@@ -110,6 +112,7 @@
 		<div class="col-3.5">
 			<h2 class="text-center">Wybrane lokalizacje</h2>
 			<%= form_for @user, url: {action: "update"} do |f| %>			
+				<%= hidden_field_tag "user[installation_ids][]", nil %>
 				<div class="actions text-center">
 					<div class="meas-alert">POWIADOMIENIA</div>
 					OFF

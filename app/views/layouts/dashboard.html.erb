@@ -29,6 +29,7 @@
       <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
       <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %> 
       <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
+      <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color' %>
     </div>
     <!-- END OF MOBILE LAYOUT -->
 <!-- =========================== -->
@@ -52,6 +53,7 @@
       <%= link_to "Zaloguj", new_user_session_path, class: 'nav-link color'  %>
       <%= link_to "Zarejestruj się", new_user_registration_path, class: 'nav-link color'  %>
       <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
+      <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color' %>
     </div>
     <!-- END OFTABLETS LAYOUT -->
 <!-- =========================== -->
@@ -60,6 +62,9 @@
       <nav class="navbar fixed-top navbar-expand-lg navbar-default scrolling-navbar" id="nav-scroll">
         <%= link_to "SO AIR", root_path, class: 'navbar-brand color' %>
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "System ostrzegania", subscriptions_path, class: 'nav-link color' %>
+          </li>
           <li class="nav-item">
             <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
           </li>

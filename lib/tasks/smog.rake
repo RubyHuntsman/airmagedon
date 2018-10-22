@@ -44,6 +44,11 @@ namespace :smog do
 
 		end
 		send_emails if Setting.notif_on == "1"
+
+		if Measurement.count > 8000
+			ids = Measurement.order('created_at ASC').limit(1000).pluck(:id)
+			Measurement.where(id: ids).delete_all
+		end
   end
 
 
