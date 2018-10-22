@@ -1,4 +1,4 @@
-§// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       document.querySelector('#timeline-tablet').addEventListener('click', () => {smoothScroll("#timeline-tablet-target", 1000)});
       //mobile
       document.querySelector('#search-mobile').addEventListener('click', () => {smoothScroll("#search-mobile-target", 1000)});
+      document.querySelector('#track-mobile').addEventListener('click', () => {smoothScroll("#track-mobile-target", 1000)});
       document.querySelector('#timeline-mobile').addEventListener('click', () => {smoothScroll("#timeline-mobile-target", 1000)});
     }
     const menus = document.querySelectorAll('.menu-icon');
