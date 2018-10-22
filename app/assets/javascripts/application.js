@@ -70,9 +70,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     else {
       //desktop
       document.querySelector('#search-desktop').addEventListener('click', () => {smoothScroll("#search-desktop-target", 1000)});
+      document.querySelector('#track-desktop').addEventListener('click', () => {smoothScroll("#track-desktop-target", 1000)});
       document.querySelector('#timeline-desktop').addEventListener('click', () => {smoothScroll("#timeline-desktop-target", 1000)});
       //tablet
       document.querySelector('#search-tablet').addEventListener('click', () => {smoothScroll("#search-tablet-target", 1000)});
+      document.querySelector('#track-tablet').addEventListener('click', () => {smoothScroll("#track-tablet-target", 1000)});
       document.querySelector('#timeline-tablet').addEventListener('click', () => {smoothScroll("#timeline-tablet-target", 1000)});
       //mobile
       document.querySelector('#search-mobile').addEventListener('click', () => {smoothScroll("#search-mobile-target", 1000)});

@@ -10,18 +10,16 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :name, "Nazwa" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Nazwa" %><br>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
-
   <div class="field">
-    <%= form.label :sensor_id, "ID sensora" %>
-    <%= form.number_field :sensor_id %>
+    <%= form.label :sensor_id, "ID sensora" %><br>
+    <%= form.number_field :sensor_id, class: 'form-control' %>
   </div>
-
   <div class="actions">
-    <%= form.submit "Dodaj sensor" %>
+    <br>
+    <%= form.submit "Zatwierdź", class: 'btn btn-outline-dark' %>
   </div>
 <% end %>

@@ -27,7 +27,7 @@
     <div class="meniu d-block d-md-none">
       <% if user_signed_in? %>
         <p class="user-mobile">Zalogowany jako<span class="user-mobile-nick"> <%= current_user.login %></span></p><br>
-        <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
+        <%= link_to "Edycja profilu", edit_user_registration_path, class: 'nav-link color' %>
         <% if current_user.is_admin %>
           <%= link_to "Ustawienia", installations_path, class: 'nav-link color' %>
         <% end %>
@@ -76,7 +76,7 @@
     <div class="meniu d-none d-md-block d-lg-none">
       <% if user_signed_in? %>
         <p class="user-mobile">Zalogowany jako<span class="user-mobile-nick"> <%= current_user.login %></span></p><br>
-        <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
+        <%= link_to "Edycja profilu", edit_user_registration_path, class: 'nav-link color' %>
         <% if current_user.is_admin %>
           <%= link_to "Ustawienia", installations_path, class: 'nav-link color' %>
         <% end %>
@@ -117,7 +117,7 @@
               <p class="nav-link active user-class"><%= current_user.login %></p>
             </li>
             <li class="nav-item">
-              <%= link_to "Edycja profile", edit_user_registration_path, class: 'nav-link color' %>
+              <%= link_to "Edycja profilu", edit_user_registration_path, class: 'nav-link color' %>
             </li>
             <% if current_user.is_admin %>
               <li class="nav-item">

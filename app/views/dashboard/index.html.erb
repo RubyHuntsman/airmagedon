@@ -62,12 +62,22 @@
       <div class="row justify-content-center d-block d-md-none">
         <div class="col-12 text-center">
           <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
+          <h6>Kliknij w legendę aby pokazać/ukryć serię danych</h6>
           <canvas id="area2" style="width: 100%; height: 50vh;"></canvas>
         </div>
       </div>
     </div>
   </div>
 </section>
+<section class="container-fluid d-block d-md-none" id="track-mobile-target">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h3 class="mobile-mobile text-center"><span style="color: #f75b5b; font-weight: bolder;">S</span>ystem <span style="color: #f75b5b; font-weight: bolder;">O</span>strzegania o <span style="color: #f75b5b; font-weight: bolder;">S</span>mogu - <span style="color: #f75b5b; font-weight: bolder;">SOS</span></h1><br>
+      <h6 class="mobile-mobile-text"><span style="color: #f75b5b; font-weight: bolder;">1.</span> Zarejestruj się</h6>
+      <h6 class="mobile-mobile-text"><span style="color: #f75b5b; font-weight: bolder;">2.</span> Wybierz obserwowane stacje oraz próg ostrzegania</h6>
+      <h6 class="mobile-mobile-text"><span style="color: #f75b5b; font-weight: bolder;">3.</span> Otrzymuj ostrzeżenia na skrzynkę pocztową</h6>
+    </div>
+  </div>
 </section>
 <!-- END OF MOBILE LAYOUT -->
 <!-- =========================== -->
@@ -79,14 +89,6 @@
       <br>
       <div class="features-medium">
         <div class="box">
-          <div id="search-tablet">
-            <div class="icon">
-              <i class="material-icons icons-mat" style="font-size: 3rem;">search</i>
-            </div>
-            <div class="text">
-              Monitoring jakości powietrza
-            </div>
-          </div>
           <div id="timeline-tablet">
             <div class="icon">
               <i class="material-icons icons-mat" style="font-size: 3rem;">timeline</i>
@@ -95,18 +97,28 @@
               Analiza statystyczna
             </div>
           </div>
-          <div class="icon">
-            <i class="material-icons icons-mat" style="font-size: 3rem;">track_changes</i>
+          <div id="search-tablet">
+            <div class="icon">
+              <i class="material-icons icons-mat" style="font-size: 3rem;">search</i>
+            </div>
+            <div class="text">
+              Monitoring jakości powietrza
+            </div>
           </div>
-          <div class="text">
-            System powiadomień
+          <div id="track-tablet">
+            <div class="icon">
+              <i class="material-icons icons-mat" style="font-size: 3rem;">track_changes</i>
+            </div>
+            <div class="text">
+              System powiadomień
+            </div>
           </div>
         </div>
       </div>
     </div>    
   </div>
 </section>
-<section class="container-fluid tab d-none d-md-block d-lg-none" id="timeline-tablet-target">
+<section class="container-fluid tab d-none d-md-block d-lg-none" id="search-tablet-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pomiary na żywo</h4>
@@ -135,18 +147,30 @@
     </div>
   </div>
 </section>
-<section class="container-fluid average-chart-md d-none d-md-block d-lg-none" id="search-tablet-target">
+<section class="container-fluid average-chart-md d-none d-md-block d-lg-none" id="timeline-tablet-target">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
+      <h6>Kliknij w legendę aby pokazać/ukryć serię danych</h6>
       <canvas id="area3" style="width: 100%; height: 40vh;"></canvas>
     </div>
   </div>
 </section>
-<section class="container-fluid average-chart-2-md d-none d-md-block d-lg-none">
+<section class="container-fluid d-none d-md-block track-md d-lg-none track" id="track-tablet-target">
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <h1 class="text-center"><span style="color: #f75b5b; font-weight: bolder;">S</span>ystem <span style="color: #f75b5b; font-weight: bolder;">O</span>strzegania o <span style="color: #f75b5b; font-weight: bolder;">S</span>mogu - <span style="color: #f75b5b; font-weight: bolder;">SOS</span></h1><br>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">1.</span> Zarejestruj się</h3>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">2.</span> Wybierz obserwowane stacje oraz próg ostrzegania</h3>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">3.</span> Otrzymuj ostrzeżenia na skrzynkę pocztową</h3>
+    </div>
+  </div>
+</section>
+<section class="container-fluid average-chart-md d-none d-md-block d-lg-none">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 - średnie godzinowe w ostatnich 24h</h4>
+      <h6>Kliknij w legendę aby pokazać/ukryć serię danych</h6>
       <canvas id="live1"></canvas>
     </div>
   </div>
@@ -161,14 +185,6 @@
       <br>
       <div class="features">
         <div class="box">
-          <div id="search-desktop">
-            <div class="icon">
-              <i class="material-icons icons-mat" style="font-size: 2.7rem;">search</i>
-            </div>
-            <div class="text">
-              Monitoring jakości powietrza
-            </div>
-          </div>
           <div id="timeline-desktop">
             <div class="icon">
               <i class="material-icons icons-mat" style="font-size: 2.7rem;" id="timeline-desktop">timeline</i>
@@ -177,11 +193,21 @@
               Analiza statystyczna
             </div>
           </div>
-          <div class="icon">
-            <i class="material-icons icons-mat" style="font-size: 2.7rem;">track_changes</i>
+          <div id="search-desktop">
+            <div class="icon">
+              <i class="material-icons icons-mat" style="font-size: 2.7rem;">search</i>
+            </div>
+            <div class="text">
+              Monitoring jakości powietrza
+            </div>
           </div>
-          <div class="text">
-            System powiadomień
+          <div id="track-desktop">
+            <div class="icon">
+              <i class="material-icons icons-mat" style="font-size: 2.7rem;">track_changes</i>
+            </div>
+            <div class="text">
+              System powiadomień
+            </div>
           </div>
         </div>
       </div>
@@ -192,6 +218,7 @@
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 i PM2.5 w ostatnich 24h w uśrednienie z <%= Installation.count %> stacji</h4>
+      <h6>Kliknij w legendę aby pokazać/ukryć serię danych</h6>
       <canvas id="area1"></canvas>
     </div>
   </div>
@@ -227,10 +254,21 @@
     </div>
   </div>
 </section>
+<section class="container-fluid d-none d-lg-block track" id="track-desktop-target">
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <h1 class="text-center"><span style="color: #f75b5b; font-weight: bolder;">S</span>ystem <span style="color: #f75b5b; font-weight: bolder;">O</span>strzegania o <span style="color: #f75b5b; font-weight: bolder;">S</span>mogu - <span style="color: #f75b5b; font-weight: bolder;">SOS</span></h1><br>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">1.</span> Zarejestruj się</h3>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">2.</span> Wybierz obserwowane stacje oraz próg ostrzegania</h3>
+      <h3><span style="color: #f75b5b; font-weight: bolder;">3.</span> Otrzymuj ostrzeżenia na skrzynkę pocztową</h3>
+    </div>
+  </div>
+</section>
 <section class="container-fluid average-chart-2 d-none d-lg-block">
   <div class="row justify-content-center">
     <div class="col-9">
       <h4>Pył zawieszony PM10 - średnie godzinowe w ostatnich 24h</h4>
+      <h6>Kliknij w legendę aby pokazać/ukryć serię danych</h6>
       <canvas id="live"></canvas>
     </div>
   </div>

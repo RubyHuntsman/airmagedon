@@ -33,7 +33,7 @@ class InstallationsController < ApplicationController
 
     respond_to do |format|
       if @installation.save
-        format.html { redirect_to @installation, notice: 'Installation was successfully created.' }
+        format.html { redirect_to @installation, notice: 'Instalacja została pomyślnie dodana' }
         format.json { render :show, status: :created, location: @installation }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class InstallationsController < ApplicationController
   def update
     respond_to do |format|
       if @installation.update(installation_params)
-        format.html { redirect_to @installation, notice: 'Installation was successfully updated.' }
+        format.html { redirect_to @installation, notice: 'Instalacja została pomyślnie zaktualizowana' }
         format.json { render :show, status: :ok, location: @installation }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class InstallationsController < ApplicationController
   def destroy
     @installation.destroy
     respond_to do |format|
-      format.html { redirect_to installations_url, notice: 'Installation was successfully destroyed.' }
+      format.html { redirect_to installations_url, notice: 'Instalacja została pomyślnie usunięta' }
       format.json { head :no_content }
     end
   end

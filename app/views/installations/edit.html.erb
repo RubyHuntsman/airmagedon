@@ -1,6 +1,32 @@
-<h1>Edytuj czujnik</h1>
+<section class="container-fluid static-mobile d-block d-md-none">
+	<div class="row justify-content-center">
+	  	<div class="col-10">
+			<h2 class="text-center">Edytuj czujnik</h2>
+			<%= render 'form', installation: @installation %>
+			<br>
+			<%= link_to 'Wróć', installations_path %>	
+	  	</div>
+	</div>
+</section>
 
-<%= render 'form', installation: @installation %>
+<section class="container-fluid static d-none d-md-block d-lg-none">
+	<div class="row justify-content-center">
+	  	<div class="col-7">
+			<h1 class="text-center">Edytuj czujnik</h1>
+			<%= render 'form', installation: @installation %>
+			<br>
+			<%= link_to 'Wróć', installations_path %>	
+	  	</div>
+	</div>
+</section>
 
-<%= link_to 'Pokaż', @installation %> |
-<%= link_to 'Cofnij', installations_path %>
+<section class="container-fluid static d-none d-lg-block">
+	<div class="row justify-content-center">
+	  	<div class="col-4">
+			<h1 class="text-center">Edytuj czujnik</h1>
+			<%= render 'form', installation: @installation %>
+			<br>
+			<%= link_to 'Wróć', installations_path %>	
+	  	</div>
+	</div>  
+</section>

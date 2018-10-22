@@ -1,149 +1,59 @@
 <section class="container-fluid static d-none d-lg-block">
 	<div class="row justify-content-center">
-		<div class="col-4">
+		<div class="col-3.5">
 			<h2 class="text-center">Wybrane lokalizacje</h2>
-			<div class="row justify-content-center">
-				<div class="col-6">
-					<%= form_for @user, url: {action: "update"} do |f| %>
-					<div class="actions text-center">
-						<div class="meas-alert">POWIADOMIENIA</div>
-						<label class="switch">
-							<%= f.check_box :isactive, class: 'checkbox' %>
-							<span class="slider round"></span>
-						</label>
-					</div>
-					<table class="table-sm">
-						<thead>
-							<tr>
-								<th>
-									STAN
-								</th>
-								<th>
-									Miejsce
-								</th>
-							</tr>
-						</thead>
-						<% @installations.each do |i| %>
+			<%= form_for @user, url: {action: "update"} do |f| %>
+			
+				<div class="actions text-center">
+					<div class="meas-alert">POWIADOMIENIA</div>
+					OFF
+					<label class="switch">
+						<%= f.check_box :isactive, class: 'checkbox' %>
+						<span class="slider round"></span>
+					</label>
+					ON
+				</div>
+				<table class="table table-borderless">
+					<thead>
 						<tr>
-							<th scope="row">
-								<label class="switch trans">
-									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
-									<span class="slider round"></span>
-								</label>
+							<th class="text-center">
+								OFF/ON
+							</th>
+							<th>
+								Miejsce
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+					<% @installations.each do |i| %>
+						<tr>
+							<th scope="row" class="text-center">
+								<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
 							</th>
 							<td>
 								<%= i.name %>
 							</td>
 						</tr>
-						<% end %>
+					<% end %>	
 						<tr>
-							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
-							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
-						</tr>
-					</table>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- BŁAGAM ZMIEN TO, TOTALNIE NIE MAM POMYSŁU CO TUTAJ DAĆ, NAWET CAŁOŚĆ-->
-<section class="container-fluid static d-none d-md-block d-lg-none">
-	<div class="row justify-content-center row-color">
-		<div class="col-7">
-			<h2 class="text-center">Wybrane lokalizacje</h2>
-			<div class="row justify-content-center">
-				<div class="col-9">
-					<%= form_for @user, url: {action: "update"} do |f| %>
-					<div class="actions text-center">
-						<div class="meas-alert">POWIADOMIENIA</div>
-						<label class="switch">
-							<%= f.check_box :isactive, class: 'checkbox' %>
-							<span class="slider round"></span>
-						</label>
-					</div>
-					<table class="table-sm">
-						<thead>
-							<tr>
-								<th>
-									STAN
-								</th>
-								<th>
-									Miejsce
-								</th>
-							</tr>
-						</thead>
-						<% @installations.each do |i| %>
-						<tr>
-							<th scope="row">
-								<label class="switch trans">
-									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
-									<span class="slider round"></span>
-								</label>
-							</th>
+							<td >
+							<div>Próg informowania</div>								
+							<%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical), {}, {class: 'custom-select'} %>	
+							</td>
 							<td>
-								<%= i.name %>
+								<div>&nbsp;</div>
+								<%= f.submit "Zmień", class: 'btn btn-outline-dark' %>
 							</td>
 						</tr>
-						<% end %>
-						<tr>
-							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
-							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
-						</tr>
-					</table>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="container-fluid static-mobile d-block d-md-none">
-	<div class="row justify-content-center row-color">
-		<div class="col-10">
-			<h2 class="text-center">Wybrane lokalizacje</h2>
-			<div class="row justify-content-center">
-				<div class="col-12">
-					<%= form_for @user, url: {action: "update"} do |f| %>
-					<div class="actions text-center">
-						<div class="meas-alert">POWIADOMIENIA</div>
-						<label class="switch">
-							<%= f.check_box :isactive, class: 'checkbox' %>
-							<span class="slider round"></span>
-						</label>
-					</div>
-					<table class="table-sm">
-						<thead>
-							<tr>
-								<th>
-									STAN
-								</th>
-								<th>
-									Miejsce
-								</th>
-							</tr>
-						</thead>
-						<% @installations.each do |i| %>
-						<tr>
-							<th scope="row">
-								<label class="switch trans">
-									<%= check_box_tag 'user[installation_ids][]', i.id, @user.installations.include?(i), class: 'checkbox' %>
-									<span class="slider round"></span>
-								</label>
-							</th>
-							<td>
-								<%= i.name %>
-							</td>
-						</tr>
-						<% end %>
-						<tr>
-							<td><%= f.select :critical, options_for_select([['Bardzo źle', 1],['Źle', 2],['Dostatecznie',3],['Umiarkowanie',4],['Dobrze',5],['Bardzo dobrze',6]], @user.critical) %></td>
-							<td><%= f.submit "Zmień", class: 'btn btn-outline-secondary' %></td>
-						</tr>
-					</table>
-					<br>
-					<% end %>
-				</div>
-			</div>
+					</tbody>
+				</table>
+
+
+
+
+
+
+			<% end %>
 		</div>
 	</div>
 </section>

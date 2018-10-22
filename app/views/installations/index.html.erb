@@ -1,61 +1,188 @@
+<section class="container-fluid static-install d-block d-md-none">
+	<div class="row justify-content-center">
+		<div class="col-12">
+			<h1 class="text-center">Instalacje</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nazwa</th>
+						<th>Czujnik</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @installations.each do |installation| %>
+						<tr>
+							<td><%= installation.name %></td>
+							<td><%= installation.sensor_id %></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Edytuj', edit_installation_path(installation), class: 'btn btn-outline-dark' %></td>
+							<td><%= link_to 'Usuń', installation, method: :delete, data: { confirm: 'Jesteś pewny?' }, class: 'btn btn-outline-danger' %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Dodaj nową instalację', new_installation_path %>
+			<br>
+			<br>
+			<br>
+			<h1>E-mail</h1>
+			<h5>Podaj dane adresu email z którego będą wysyłane powiadomienia</h5>
+			<%= form_with url: '/smtp_options' do |f| %>
+				<%= f.label "Email" %>
+				<%= f.text_field :smtp_login, value: Setting.smtp_login, class: 'form-control' %>
+				<%= f.label "Hasło" %>
+				<%= f.password_field :smtp_password, value: Setting.smtp_password, class: 'form-control' %>
+				<%= f.label "Serwer poczty" %>
+				<%= f.text_field :smtp_host, value: Setting.smtp_host, class: 'form-control' %>
+				<%= f.label "Włącz wysyłanie powiadomień" %>
+				<%= f.check_box :notif_on, { checked: true ? Setting.notif_on == "1" : false } %>
+				<%= f.submit "Zatwierdź", class: 'btn btn-outline-dark' %>
+			<% end %>
+			<br>
+			<br>
+			<br>
+			<h1>Apikey</h1>
+			<h5>Podaj klucz(e) Airly</h5>
+			<%= form_tag action: 'api_key' do |form| %>
+				<%= label_tag "Klucz API 1" %>
+				<%= text_field_tag :api_key, Setting.api_key, class: 'form-control' %>
+				<%= label_tag "Klucz API 2" %>
+				<%= text_field_tag :api_key2, Setting.api_key2, class: 'form-control' %>
+				<%= label_tag "Klucz API 3" %>
+				<%= text_field_tag :api_key3, Setting.api_key3, class: 'form-control' %><br>
+				<%= submit_tag "Zatwierdź", class: 'btn btn-outline-dark' %>
+			<% end %>
+		</div>  
+	</div>
+</section>
+
+<section class="container-fluid static-install d-none d-md-block d-lg-none">
+	<div class="row justify-content-center">
+		<div class="col-8">
+			<h1 class="text-center">Instalacje</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nazwa</th>
+						<th>Czujnik</th>
+						<th colspan="2"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @installations.each do |installation| %>
+						<tr>
+							<td><%= installation.name %></td>
+							<td><%= installation.sensor_id %></td>
+							<td><%= link_to 'Edytuj', edit_installation_path(installation), class: 'btn btn-outline-dark' %></td>
+							<td><%= link_to 'Usuń', installation, method: :delete, data: { confirm: 'Jesteś pewny?' }, class: 'btn btn-outline-danger' %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Dodaj nową instalację', new_installation_path %>
+			<br>
+			<br>
+			<br>
+			<h1 class="text-center">E-mail</h1>
+			<h5 class="text-center">Podaj dane adresu email z którego będą wysyłane powiadomienia</h5>
+			<br>
+			<%= form_with url: '/smtp_options' do |f| %>
+				<%= f.label "Email" %>
+				<%= f.text_field :smtp_login, value: Setting.smtp_login, class: 'form-control' %>
+				<%= f.label "Hasło" %>
+				<%= f.password_field :smtp_password, value: Setting.smtp_password, class: 'form-control' %>
+				<%= f.label "Serwer poczty" %>
+				<%= f.text_field :smtp_host, value: Setting.smtp_host, class: 'form-control' %>
+				<%= f.label "Włącz wysyłanie powiadomień" %>
+				<%= f.check_box :notif_on, { checked: true ? Setting.notif_on == "1" : false } %>
+				<%= f.submit "Zatwierdź", class: 'btn btn-outline-dark' %>
+			<% end %>
+			<br>
+			<br>
+			<br>
+			<h1 class="text-center">Apikey</h1>
+			<h5 class="text-center">Podaj klucz(e) Airly</h5>
+			<%= form_tag action: 'api_key' do |form| %>
+				<%= label_tag "Klucz API 1" %>
+				<%= text_field_tag :api_key, Setting.api_key, class: 'form-control' %>
+				<%= label_tag "Klucz API 2" %>
+				<%= text_field_tag :api_key2, Setting.api_key2, class: 'form-control' %>
+				<%= label_tag "Klucz API 3" %>
+				<%= text_field_tag :api_key3, Setting.api_key3, class: 'form-control' %><br>
+				<%= submit_tag "Zatwierdź", class: 'btn btn-outline-dark' %>
+			<% end %>
+		</div>  
+	</div>
+</section>
+
+<section class="container-fluid static-install d-none d-lg-block">
+	<div class="row justify-content-center">
+		<div class="col-8">
+			<h1>Instalacje</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nazwa</th>
+						<th>Czujnik</th>
+						<th colspan="2"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @installations.each do |installation| %>
+						<tr>
+							<td><%= installation.name %></td>
+							<td><%= installation.sensor_id %></td>
+							<td><%= link_to 'Edytuj', edit_installation_path(installation), class: 'btn btn-outline-dark' %></td>
+							<td><%= link_to 'Usuń', installation, method: :delete, data: { confirm: 'Jesteś pewny?' }, class: 'btn btn-outline-danger' %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Dodaj nową instalację', new_installation_path %>
+			<br>
+			<br>
+			<br>
+			<h1>E-mail</h1>
+			<h5>Podaj dane adresu email z którego będą wysyłane powiadomienia</h5>
+			<div class="row">
+				<div class="col-6">
+					<br>
+					<%= form_with url: '/smtp_options' do |f| %>
+						<%= f.label "Email" %>
+						<%= f.text_field :smtp_login, value: Setting.smtp_login, class: 'form-control' %>
+						<%= f.label "Hasło" %>
+						<%= f.password_field :smtp_password, value: Setting.smtp_password, class: 'form-control' %>
+						<%= f.label "Serwer poczty" %>
+						<%= f.text_field :smtp_host, value: Setting.smtp_host, class: 'form-control' %>
+						<%= f.label "Włącz wysyłanie powiadomień" %>
+						<%= f.check_box :notif_on, { checked: true ? Setting.notif_on == "1" : false } %><br>
+						<%= f.submit "Zatwierdź", class: 'btn btn-outline-dark' %>
+					<% end %>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<h1>Apikey</h1>
+			<h5>Podaj klucz(e) Airly</h5>
+			<div class="row">
+				<div class="col-6">
+					<%= form_tag action: 'api_key' do |form| %>
+						<%= label_tag "Klucz API 1" %>
+						<%= text_field_tag :api_key, Setting.api_key, class: 'form-control' %>
+						<%= label_tag "Klucz API 2" %>
+						<%= text_field_tag :api_key2, Setting.api_key2, class: 'form-control' %>
+						<%= label_tag "Klucz API 3" %>
+						<%= text_field_tag :api_key3, Setting.api_key3, class: 'form-control' %><br>
+						<%= submit_tag "Zatwierdź", class: 'btn btn-outline-dark' %>
+					<% end %>
+				</div>
+			</div>
+		</div>  
+	</div>
+</section>
+
 <p id="notice"><%= notice %></p>
-
-<h1>Installations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nazwa</th>
-      <th>Czujnik</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @installations.each do |installation| %>
-      <tr>
-        <td><%= installation.name %></td>
-        <td><%= installation.sensor_id %></td>
-        <td><%= link_to 'Pokaż', installation %></td>
-        <td><%= link_to 'Edytuj', edit_installation_path(installation) %></td>
-        <td><%= link_to 'Usuń', installation, method: :delete, data: { confirm: 'Czy jesteś pewny?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nowa instalacja', new_installation_path %>
-
-<h1>E-mail</h1>
-<p>Podaj dane adresu email z którego będą wysyłane powiadomienia</p>
-
-
-<!-- <%= form_tag action: 'smtp_options' do |f| %>
-  <%= text_field_tag :smtp_login, Setting.smtp_login %><br>
-  <%= password_field_tag :smtp_password, Setting.smtp_password %><br>
-  <%= text_field_tag :smtp_host, Setting.smtp_host %><br>
-  <%= hidden_field_tag :notif, '' %>
-  <%= check_box_tag :notif, checked=true %><br>
-  <%= submit_tag "Zatwierdź" %>
-<% end %> -->
-
-<%= form_with url: '/smtp_options' do |f| %>
-<%= f.text_field :smtp_login, value: Setting.smtp_login %><br>
-<%= f.password_field :smtp_password, value: Setting.smtp_password %><br>
-<%= f.text_field :smtp_host, value: Setting.smtp_host %><br>
-<%= f.check_box :notif_on, { checked: true ? Setting.notif_on == "1" : false } %>
-<%= f.submit "Zatwierdź2" %>
-<% end %>
-
-
-<h1>Apikey</h1>
-<p>Podaj klucz(e) Airly</p>
-
-<%= form_tag action: 'api_key' do |form| %>
-  <%= text_field_tag :api_key, Setting.api_key %><br>
-  <%= text_field_tag :api_key2, Setting.api_key2 %><br>
-  <%= text_field_tag :api_key3, Setting.api_key3 %><br>
-  <%= submit_tag "Zatwierdź" %>
-<% end %>
