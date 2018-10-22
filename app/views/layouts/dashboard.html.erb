@@ -13,7 +13,7 @@
     <!-- MOBILE LAYOUT -->
     <div class="d-block d-md-none">
       <nav class="navbar fixed-top scrolling-navbar navbar-default-mobile">
-        <%= link_to index_path do %>
+        <%= link_to root_path do %>
           <div class="navbar-brand color">
             <i class="material-icons">home</i>
           </div>
@@ -36,7 +36,7 @@
     <!-- TABLETS -->
     <div class="d-none d-md-block d-lg-none">
       <nav class="navbar fixed-top scrolling-navbar navbar-default-mobile">
-        <%= link_to index_path do %>
+        <%= link_to root_path do %>
           <div class="navbar-brand color">
             <i class="material-icons">home</i>
           </div>
@@ -58,7 +58,7 @@
     <!-- DESKTOPS --> 
     <div class="d-none d-lg-block">
       <nav class="navbar fixed-top navbar-expand-lg navbar-default scrolling-navbar" id="nav-scroll">
-        <%= link_to "SO AIR", index_path, class: 'navbar-brand color' %>
+        <%= link_to "SO AIR", root_path, class: 'navbar-brand color' %>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <%= link_to "O aplikacji", about_path, class: 'nav-link color' %>
