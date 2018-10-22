@@ -2,6 +2,9 @@ class InstallationsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_if_admin
   before_action :set_installation, only: [:show, :edit, :update, :destroy]
+
+  before_action :restrict_user, :only => [:show]
+
   # GET /installations
   # GET /installations.json
   def index
@@ -102,5 +105,9 @@ class InstallationsController < ApplicationController
         redirect_to "/"
         flash[:alert] = "Dostęp tylko dla administracji"
       end
+    end
+    
+    def restrict_user
+      redirect_to :installations, :alert => "Not authorized"
     end
 end
