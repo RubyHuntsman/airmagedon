@@ -39,6 +39,7 @@ $ git clone git@github.com:RubyHuntsman/airmagedon.git
 $ cd airmagedon/
 $ bundle
 $ rails db:migrate
+$ rails db:seed
 $ rails s
 ```
 Now you can go to the website 
